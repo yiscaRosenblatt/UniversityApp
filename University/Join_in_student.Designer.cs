@@ -1,6 +1,6 @@
 ﻿namespace University
 {
-    partial class Form1
+    partial class Join_in_student
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,6 +34,7 @@
             label1 = new Label();
             label2 = new Label();
             button2 = new Button();
+            label3 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -50,6 +51,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 1;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // button1
             // 
@@ -89,12 +91,24 @@
             button2.TabIndex = 5;
             button2.Text = "Sign up";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(365, 37);
+            label3.Name = "label3";
+            label3.Size = new Size(300, 200);
+            label3.TabIndex = 6;
+            label3.Text = "university";
+            label3.Click += label3_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -107,6 +121,8 @@
             PerformLayout();
         }
 
+
+
         #endregion
 
         private TextBox textBox1;
@@ -115,5 +131,6 @@
         private Label label1;
         private Label label2;
         private Button button2;
+        private Label label3;
     }
 }
