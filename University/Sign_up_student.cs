@@ -31,5 +31,12 @@ namespace University
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Join_in_student Join_in_student = new Join_in_student();
+            Join_in_student.Show();
+            this.Hide();
+        }
     }
 }
