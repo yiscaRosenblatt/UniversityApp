@@ -43,6 +43,8 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             label8 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -164,16 +166,37 @@
             label8.AutoSize = true;
             label8.Location = new Point(337, 38);
             label8.Name = "label8";
-            label8.Size = new Size(100, 30);
+            label8.Size = new Size(57, 20);
             label8.TabIndex = 14;
             label8.Text = "sign up";
             label8.Click += label8_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(321, 345);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 15;
+            button1.Text = "sign up";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(12, 409);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 16;
+            button2.Text = "back";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Sign_up_student
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label8);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
@@ -212,5 +235,7 @@
         private TextBox textBox6;
         private TextBox textBox7;
         private Label label8;
+        private Button button1;
+        private Button button2;
     }
 }

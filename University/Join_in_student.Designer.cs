@@ -35,6 +35,7 @@
             label2 = new Label();
             button2 = new Button();
             label3 = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -103,11 +104,22 @@
             label3.Text = "university";
             label3.Click += label3_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(26, 394);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 7;
+            button3.Text = "back";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Join_in_student
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(label2);
@@ -132,5 +144,6 @@
         private Label label2;
         private Button button2;
         private Label label3;
+        private Button button3;
     }
 }
