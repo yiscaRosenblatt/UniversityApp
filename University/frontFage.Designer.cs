@@ -31,6 +31,7 @@
             button1 = new Button();
             button2 = new Button();
             label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -61,11 +62,22 @@
             label1.Text = "Login to the university's website";
             label1.Click += label1_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(332, 46);
+            label2.Name = "label2";
+            label2.Size = new Size(156, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Who are you?????????";
+            label2.Click += label2_Click;
+            // 
             // frontFage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -80,5 +92,6 @@
         private Button button1;
         private Button button2;
         private Label label1;
+        private Label label2;
     }
 }
