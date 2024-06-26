@@ -54,11 +54,12 @@
             // button1
             // 
             button1.Location = new Point(348, 259);
-            button1.Name = "connection";
+            button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 2;
             button1.Text = "connection";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -83,7 +84,7 @@
             // button2
             // 
             button2.Location = new Point(348, 305);
-            button2.Name = "Sign up";
+            button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 5;
             button2.Text = "Sign up";
