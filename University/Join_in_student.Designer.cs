@@ -55,11 +55,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(405, 295);
+            button1.Location = new Point(348, 259);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 2;
-            button1.Text = "connection";
+            button1.Text = "join in";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -85,7 +85,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(288, 295);
+            button2.Location = new Point(348, 305);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 5;
@@ -96,7 +96,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(364, 36);
+            label3.Location = new Point(365, 37);
             label3.Name = "label3";
             label3.Size = new Size(71, 20);
             label3.TabIndex = 6;
