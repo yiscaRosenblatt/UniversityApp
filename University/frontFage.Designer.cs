@@ -56,21 +56,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(303, 113);
+            label1.Location = new Point(297, 57);
             label1.Name = "label1";
             label1.Size = new Size(219, 20);
             label1.TabIndex = 2;
-            label1.Text = "Login to the university's website";
+            label1.Text = "Welcome to the university's website";
             label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(332, 46);
+            label2.Location = new Point(325, 127);
             label2.Name = "label2";
             label2.Size = new Size(156, 20);
             label2.TabIndex = 3;
-            label2.Text = "Who are you?????????";
+            label2.Text = "Who are you???";
             label2.Click += label2_Click;
             // 
             // frontFage
