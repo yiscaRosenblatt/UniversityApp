@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class user
+    internal class User
     {
         private static List<User> users = new List<User>();
      
@@ -15,26 +15,33 @@ namespace University
         private String lastName { get; set; }
         private String email { get; set; }
         private int ID { get; set; }
-        private String userName { get; set; }
+        private String UserName { get; set; }
         private String password { get; set; }
 
         
 
-        public user( string firstName, string lastName, string email, int iD, string userName, string password)
+        public User(string firstName, string lastName, string email, int iD, string userName, string password)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.email = email;
             ID = iD;
-            this.userName = userName;
+            this.UserName = userName;
             this.password = password;
         }
 
-        public static void addUser(user user)
+       public static void addUser(User user)
         {
-           for (int i = 0; i < users.Count; i++)
+            bool userExists = users.Any(u => u.UserName == user.UserName);
+
+            if (!userExists)
             {
-                if (users[i].userName)
+                users.Add(user);
+                Console.WriteLine("User added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Username already exists. User not added.");
             }
         }
 
