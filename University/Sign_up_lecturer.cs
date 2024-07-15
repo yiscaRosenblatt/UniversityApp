@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace University
 {
@@ -26,5 +27,37 @@ namespace University
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            String name = textBox2.Text;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            String lastName = textBox1.Text;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            String ID = textBox6.Text;
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            String email = textBox7.Text;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            String userName = textBox3.Text;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            String password = textBox4.Text;
+        }
+
+        
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            button1 = new ();
             button2 = new Button();
             label1 = new Label();
             label2 = new Label();

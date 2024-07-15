@@ -1,7 +1,10 @@
+using Microsoft.VisualBasic.ApplicationServices;
+
 namespace University
 {
     public partial class Join_in_student : Form
     {
+        
         public Join_in_student()
         {
             InitializeComponent();
@@ -36,6 +39,14 @@ namespace University
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+           /* foreach (List<User> users in Sign_up_student.users)
+            {
+                for (int i = 0; i < users.Count; i++)
+                {
+
+                }
+            }*/
 
         }
 

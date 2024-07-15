@@ -9,45 +9,86 @@ namespace University
 {
     internal class User
     {
-        private static List<User> users = new List<User>();
-     
-        private String firstName { get; set; }
-        private String lastName { get; set; }
-        private String email { get; set; }
-        private int ID { get; set; }
-        private String UserName { get; set; }
-        private String password { get; set; }
 
-        
+        private String firstName;
+        private String lastName;
+        private String email;
+        private string iD;
+        private String UserName;
+        private String password;
 
-        public User(string firstName, string lastName, string email, int iD, string userName, string password)
+
+
+
+        public User(string firstName, string lastName, string email, String iD, string userName, string password)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
-            ID = iD;
-            this.UserName = userName;
-            this.password = password;
+            SetFirstName(firstName);
+            SetLastName(lastName);
+            SetEmail(email);
+            SetID(iD);
+            SetUserName(userName);
+            SetPassword(password);
         }
 
-       public static void addUser(User user)
+        public string GetID()
         {
-            bool userExists = users.Any(u => u.UserName == user.UserName);
-
-            if (!userExists)
-            {
-                users.Add(user);
-                Console.WriteLine("User added successfully.");
-            }
-            else
-            {
-                Console.WriteLine("Username already exists. User not added.");
-            }
+            return iD;
         }
 
-       
+        private void SetID(string value)
+        {
+            iD = value;
+        }
+
+        public string GetFirstName()
+        {
+            return firstName;
+        }
+
+        private void SetFirstName(string value)
+        {
+            firstName = value;
+        }
+
+        public string GetLastName()
+        {
+            return lastName;
+        }
+
+        private void SetLastName(string value)
+        {
+            lastName = value;
+        }
+        public string GetEmail()
+        {
+            return email;
+        }
+
+        private void SetEmail(string value)
+        {
+            email = value;
+        }
+        public string GetUserName()
+        {
+            return UserName;
+        }
+        private void SetUserName(string value)
+        {
+            UserName = value;
+        }
+
+        public string GetPassword()
+        {
+            return password;
+        }
+        private void SetPassword(string value)
+        {
+            password = value;
+        }
+
         
        
+
 
     }
 
