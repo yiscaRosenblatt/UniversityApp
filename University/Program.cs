@@ -13,5 +13,7 @@ namespace University
             ApplicationConfiguration.Initialize();
             Application.Run(new frontFage());
         }
+
+
     }
 }
