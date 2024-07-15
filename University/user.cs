@@ -7,66 +7,62 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class User
+    public class User
     {
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string Email { get; private set; }
+        public string ID { get; private set; }
+        public string UserName { get; private set; }
+        public string Password { get; private set; }
 
-        private String firstName;
-        private String lastName;
-        private String email;
-        private string iD;
-        private String UserName;
-        private String password;
-
-
-
-
-        public User(string firstName, string lastName, string email, String iD, string userName, string password)
+        public User(string firstName, string lastName, string email, string id, string userName, string password)
         {
-            SetFirstName(firstName);
-            SetLastName(lastName);
-            SetEmail(email);
-            SetID(iD);
-            SetUserName(userName);
-            SetPassword(password);
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            ID = id;
+            UserName = userName;
+            Password = password;
         }
 
         public string GetID()
         {
-            return iD;
+            return ID;
         }
 
         private void SetID(string value)
         {
-            iD = value;
+            ID = value;
         }
 
         public string GetFirstName()
         {
-            return firstName;
+            return FirstName;
         }
 
         private void SetFirstName(string value)
         {
-            firstName = value;
+            FirstName = value;
         }
 
         public string GetLastName()
         {
-            return lastName;
+            return LastName;
         }
 
         private void SetLastName(string value)
         {
-            lastName = value;
+            LastName = value;
         }
         public string GetEmail()
         {
-            return email;
+            return Email;
         }
 
         private void SetEmail(string value)
         {
-            email = value;
+            Email = value;
         }
         public string GetUserName()
         {
@@ -79,11 +75,11 @@ namespace University
 
         public string GetPassword()
         {
-            return password;
+            return Password;
         }
         private void SetPassword(string value)
         {
-            password = value;
+            Password = value;
         }
 
         
