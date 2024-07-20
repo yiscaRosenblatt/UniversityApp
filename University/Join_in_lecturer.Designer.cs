@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-       
+
 
         #region Windows Form Designer generated code
 
@@ -55,6 +55,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(96, 27);
             textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox3
             // 
@@ -84,7 +85,7 @@
             // button1
             // 
             button1.Location = new Point(267, 331);
-            button1.Name = "Join in";
+            button1.Name = "button1";
             button1.Size = new Size(118, 44);
             button1.TabIndex = 7;
             button1.Text = "Join in";
@@ -94,7 +95,7 @@
             // button2
             // 
             button2.Location = new Point(407, 331);
-            button2.Name = "connection";
+            button2.Name = "button2";
             button2.Size = new Size(118, 44);
             button2.TabIndex = 8;
             button2.Text = "connection";

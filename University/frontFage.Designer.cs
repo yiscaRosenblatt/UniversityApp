@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+       private void InitializeComponent()
         {
             button1 = new ();
             button2 = new Button();
@@ -46,7 +46,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(85, 189);
+            button2.Location = new Point(85, 189); 
             button2.Name = "button2";
             button2.Size = new Size(261, 100);
             button2.TabIndex = 1;
