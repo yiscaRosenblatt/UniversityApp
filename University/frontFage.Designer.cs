@@ -26,10 +26,10 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-       private void InitializeComponent()
+        private void InitializeComponent()
         {
-            button1 = new ();
-            button2 = new Button();
+            button1 = new Button();
+            LecturerButton = new Button();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -44,22 +44,26 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
+            // LecturerButton
             // 
-            button2.Location = new Point(85, 189); 
-            button2.Name = "button2";
-            button2.Size = new Size(261, 100);
-            button2.TabIndex = 1;
-            button2.Text = "lecturers";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            LecturerButton.Location = new Point(85, 189);
+            LecturerButton.Name = "LecturerButton";
+            LecturerButton.Size = new Size(261, 100);
+            LecturerButton.TabIndex = 1;
+            LecturerButton.Text = "lecturers";
+            LecturerButton.UseVisualStyleBackColor = true;
+            LecturerButton.Click += button2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(262, 54);
+            label1.BackColor = Color.Azure;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlDark;
+            label1.Location = new Point(186, 53);
             label1.Name = "label1";
-            label1.Size = new Size(244, 20);
+            label1.Size = new Size(471, 31);
             label1.TabIndex = 2;
             label1.Text = "Welcome to the university's website";
             label1.Click += label1_Click;
@@ -67,7 +71,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(325, 127);
+            label2.Location = new Point(353, 128);
             label2.Name = "label2";
             label2.Size = new Size(114, 20);
             label2.TabIndex = 3;
@@ -78,10 +82,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button2);
+            Controls.Add(LecturerButton);
             Controls.Add(button1);
             Name = "frontFage";
             Text = "frontFage";
@@ -92,7 +97,7 @@
         #endregion
 
         private Button button1;
-        private Button button2;
+        private Button LecturerButton;
         private Label label1;
         private Label label2;
     }
