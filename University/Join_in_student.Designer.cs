@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            userName_input = new TextBox();
             textBox2 = new TextBox();
             button1 = new Button();
             label1 = new Label();
@@ -38,13 +38,13 @@
             button3 = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // userName_input
             // 
-            textBox1.Location = new Point(335, 129);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+            userName_input.Location = new Point(335, 129);
+            userName_input.Name = "userName_input";
+            userName_input.Size = new Size(125, 27);
+            userName_input.TabIndex = 0;
+            userName_input.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -72,7 +72,6 @@
             label1.Size = new Size(75, 20);
             label1.TabIndex = 3;
             label1.Text = "Username";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -82,7 +81,6 @@
             label2.Size = new Size(72, 20);
             label2.TabIndex = 4;
             label2.Text = "password";
-            label2.Click += label2_Click;
             // 
             // button2
             // 
@@ -97,9 +95,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(365, 37);
+            label3.BackColor = SystemColors.Control;
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(335, 24);
             label3.Name = "label3";
-            label3.Size = new Size(71, 20);
+            label3.Size = new Size(144, 41);
             label3.TabIndex = 6;
             label3.Text = "university";
             label3.Click += label3_Click;
@@ -126,7 +126,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(userName_input);
             Name = "Join_in_student";
             Text = "Form1";
             ResumeLayout(false);
@@ -137,7 +137,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox userName_input;
         private TextBox textBox2;
         private Button button1;
         private Label label1;
