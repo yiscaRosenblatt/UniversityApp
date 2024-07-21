@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace University
 {
-    public class User
+    public class User 
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -15,6 +16,8 @@ namespace University
         public string ID { get; private set; }
         public string UserName { get; private set; }
         public string Password { get; private set; }
+
+
 
         public User(string firstName, string lastName, string email, string id, string userName, string password)
         {

@@ -15,8 +15,9 @@ namespace University
         private int email;
         private Image image;
         private List<String> mesges;
+            
 
 
-
+        
     }
 }

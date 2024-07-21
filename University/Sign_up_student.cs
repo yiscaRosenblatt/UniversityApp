@@ -25,7 +25,7 @@ namespace University
         private string ID;
         private string userName;
         private string chekPassword;
-        public static List<User> users = new List<User>();
+        public static List<User> userStudemt = new List<User>();
 
 
 
@@ -137,19 +137,19 @@ namespace University
         private void AddUser(User newUser)
         {
             bool isTaking = false;
-            for (int i = 0; i < users.Count; i++)
+            for (int i = 0; i < userStudemt.Count; i++)
             {
-                if (users[i].GetID().Equals(newUser.GetID()))
+                if (userStudemt[i].GetID().Equals(newUser.GetID()))
                 {
                     MessageBox.Show("this ID in the system");
                     isTaking = true;
                 }
-                else if (users[i].GetUserName().Equals(newUser.GetUserName()))
+                else if (userStudemt[i].GetUserName().Equals(newUser.GetUserName()))
                 {
                     MessageBox.Show("this User Name is taking");
                     isTaking = true;
                 }
-                else if (users[i].GetPassword().Equals(newUser.GetPassword()))
+                else if (userStudemt[i].GetPassword().Equals(newUser.GetPassword()))
                 {
                     MessageBox.Show("this Password is taking");
                     isTaking = true;
@@ -157,7 +157,7 @@ namespace University
             }
             if (!isTaking)
             {
-                users.Add(newUser);
+                userStudemt.Add(newUser);
                 MessageBox.Show("you sign up sucssfly");
             }
 
