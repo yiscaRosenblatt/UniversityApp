@@ -43,7 +43,7 @@ namespace University
             bool isExists = false;
             for (int i = 0; i < Sign_up_lecturer.users.Count; i++)
             {
-                if (Sign_up_lecturer.users[i].GetUserName().Equals(UsurName) && Sign_up_student.users[i].GetPassword().Equals(PasswordP))
+                if (Sign_up_lecturer.users[i].GetUserName().Equals(UsurName) && Sign_up_lecturer.users[i].GetPassword().Equals(PasswordP))
                 {
                     HomePage homePage = new HomePage();
                     homePage.Show();
