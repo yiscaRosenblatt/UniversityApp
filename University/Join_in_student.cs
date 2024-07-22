@@ -16,8 +16,6 @@ namespace University
             UsurName = userName_input.Text;
         }
 
-
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             Password = textBox2.Text;
@@ -35,19 +33,18 @@ namespace University
             bool isExists = false;
             for (int i = 0; i < Sign_up_student.users.Count; i++)
             {
-                if (Sign_up_student.users[i].GetUserName().Equals(UsurName) && Sign_up_student.users[i].GetPassword().Equals(Password)){
+                if (Sign_up_student.users[i].GetUserName().Equals(UsurName) && Sign_up_student.users[i].GetPassword().Equals(Password))
+                {
                     HomePage homePage = new HomePage();
                     homePage.Show();
                     this.Hide();
                     isExists = true;
                 }
             }
-            if (!isExists) 
+            if (!isExists)
             {
                 MessageBox.Show("UserName or Password isn't corect");
             }
-
-            
 
         }
 
@@ -61,6 +58,11 @@ namespace University
             frontFage frontFage = new frontFage();
             frontFage.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
