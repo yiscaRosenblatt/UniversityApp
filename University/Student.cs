@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class Student : Person
+    public class Student
     {
-        private int numStudent;
-        private String Route;
-        private string specialization;
-        private int currentNkz;
-        private int totalNkz;
-        private bool isTeach;
+        public int numStudent { get; private set; }
+        public String Route { get; private set; }
+        public string specialization { get; private set; }
+        public int currentNkz { get; private set; }
+        public int totalNkz { get; private set; }
+        public bool isTeach { get; private set; }
         
 
 

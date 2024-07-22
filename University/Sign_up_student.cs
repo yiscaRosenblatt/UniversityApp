@@ -26,6 +26,7 @@ namespace University
         private string userName;
         private string chekPassword;
         public static List<User> userStudemt = new List<User>();
+        public static int corentUserStudent { get; set; }
 
 
 

@@ -6,6 +6,8 @@ namespace University
     {
         private String UsurName;
         private String Password;
+
+
         public Join_in_student()
         {
             InitializeComponent();
@@ -40,6 +42,8 @@ namespace University
                     homePage.Show();
                     this.Hide();
                     isExists = true;
+                    Sign_up_student.userStudemt[i].isStident = true; // מעדכן שהניכנס הוא תלמיד
+                    Sign_up_student.corentUserStudent = i; // מכניס את מי שעכשיו במערכת למשתנה
                 }
             }
             if (!isExists) 
