@@ -16,5 +16,12 @@ namespace University
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Messages messages = new Messages();
+            messages.Show();
+            this.Hide();
+        }
     }
 }
