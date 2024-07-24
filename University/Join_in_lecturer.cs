@@ -71,6 +71,14 @@ namespace University
      /*   private void titleLecturer_Click(object sender, EventArgs e)
         {
 
-        }*/
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frontFage frontFage = new frontFage();
+            frontFage.Show();
+            this.Hide();
+        }
     }
 }
