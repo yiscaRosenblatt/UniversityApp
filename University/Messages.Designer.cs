@@ -81,7 +81,7 @@
             buttonTheSender.Name = "buttonTheSender";
             buttonTheSender.Size = new Size(123, 39);
             buttonTheSender.TabIndex = 3;
-            buttonTheSender.Text = "the sender";
+            buttonTheSender.Text = "alphabetical";
             buttonTheSender.UseVisualStyleBackColor = true;
             // 
             // label2

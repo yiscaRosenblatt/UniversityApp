@@ -119,6 +119,7 @@
             titleLecturer.Size = new Size(167, 37);
             titleLecturer.TabIndex = 9;
             titleLecturer.Text = "lecturer\r\n";
+            titleLecturer.Click += titleLecturer_Click;
             // 
             // buttonBack
             // 

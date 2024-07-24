@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,18 @@ namespace University
         {
             string dateTimeMessage = $"{message} - {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
             theMessages.Items.Add(dateTimeMessage);
+        }
+        private void theMessages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (theMessages.SelectedItem != null)
+            {
+                string selectedItem = theMessages.SelectedItem.ToString();
+                string datePart = selectedItem.Substring(selectedItem.LastIndexOf('-') + 2);
+                if (DateTime.TryParseExact(datePart, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateTime))
+                {
+                    monthCalendar.SetDate(dateTime);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
