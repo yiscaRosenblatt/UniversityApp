@@ -26,7 +26,6 @@ namespace University
 
 
 
-
         public User(string firstName, string lastName, string email, string id, string userName, string password)
         {
             this.FirstName = firstName;
