@@ -18,8 +18,6 @@ namespace University
             UsurName = userName_input.Text;
         }
 
-
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             Password = textBox2.Text;
@@ -46,12 +44,10 @@ namespace University
                     Sign_up_student.corentUserStudent = i; // מכניס את מי שעכשיו במערכת למשתנה
                 }
             }
-            if (!isExists) 
+            if (!isExists)
             {
                 MessageBox.Show("UserName or Password isn't corect");
             }
-
-            
 
         }
 
@@ -65,6 +61,11 @@ namespace University
             frontFage frontFage = new frontFage();
             frontFage.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

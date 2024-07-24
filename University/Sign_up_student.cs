@@ -131,7 +131,7 @@ namespace University
                 AddUser(newUser);
             }
 
-            
+
 
         }
 
@@ -161,6 +161,13 @@ namespace University
                 userStudemt.Add(newUser);
                 MessageBox.Show("you sign up sucssfly");
             }
+
+            
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
 
         }
     }

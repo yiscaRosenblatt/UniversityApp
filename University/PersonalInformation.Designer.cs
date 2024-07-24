@@ -1,4 +1,6 @@
-﻿namespace University
+﻿using System.Windows.Forms;
+
+namespace University
 {
     partial class PersonalInformation
     {
@@ -37,28 +39,40 @@
             listBox2 = new ListBox();
             label4 = new Label();
             label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(42, 127);
+            pictureBox1.Image = Properties.Resources.na_na;
+            pictureBox1.Location = new Point(30, 81);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 133);
+            pictureBox1.Size = new Size(161, 199);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.Image = newImage;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(538, 12);
+            dateTimePicker1.Location = new Point(548, 26);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 4;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+    
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(363, 78);
+            label1.Location = new Point(347, 71);
             label1.Name = "label1";
             label1.Size = new Size(146, 20);
             label1.TabIndex = 5;
@@ -71,7 +85,8 @@
             label2.Name = "label2";
             label2.Size = new Size(73, 20);
             label2.TabIndex = 6;
-            label2.Text = "Messages";
+            label2.Text = "lest Message";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -89,6 +104,13 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(175, 104);
             listBox1.TabIndex = 8;
+            if (Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].mesges.Count > 0)
+            {
+                listBox1.Items.Add(Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].mesges[Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].mesges.Count - 1]);
+            }else
+            {
+                listBox1.Items.Add("No messages available.");
+            }
             // 
             // listBox2
             // 
@@ -97,32 +119,105 @@
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(180, 104);
             listBox2.TabIndex = 9;
+
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(197, 129);
+            label4.Location = new Point(250, 119);
             label4.Name = "label4";
-            label4.Size = new Size(50, 20);
+            label4.Size = new Size(60, 20);
             label4.TabIndex = 10;
-            label4.Text = "label4";
+            label4.Text = "Name: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].FirstName + " " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].LastName;
+
             label4.Click += label4_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(197, 176);
+            label5.Location = new Point(250, 167);
             label5.Name = "label5";
-            label5.Size = new Size(50, 20);
+            label5.Size = new Size(53, 20);
             label5.TabIndex = 11;
-            label5.Text = "label5";
+            label5.Text = "Email: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].Email;
+
             label5.Click += label5_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(250, 208);
+            label6.Name = "label6";
+            label6.Size = new Size(31, 20);
+            label6.TabIndex = 12;
+            label6.Text = "ID: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].ID;
+
+            label6.Click += label6_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(250, 251);
+            label7.Name = "label7";
+            label7.Size = new Size(43, 20);
+            label7.TabIndex = 13;
+            label7.Text = "Age: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].age;
+
+            label7.Click += label7_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(250, 286);
+            label8.Name = "label8";
+            label8.Size = new Size(57, 20);
+            label8.TabIndex = 14;
+            label8.Text = "Phone: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].phon;
+
+            label8.Click += label8_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(58, 286);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 15;
+            button1.Text = "Change image";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.ForeColor = Color.Red;
+            button2.Location = new Point(12, 24);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 16;
+            button2.Text = "Log out";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 409);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 17;
+            button3.Text = "beak";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // PersonalInformation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(821, 450);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(listBox2);
@@ -151,5 +246,11 @@
         private ListBox listBox2;
         private Label label4;
         private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
