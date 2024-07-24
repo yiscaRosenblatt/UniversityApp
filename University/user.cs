@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace University
 {
@@ -15,15 +17,27 @@ namespace University
         public string ID { get; private set; }
         public string UserName { get; private set; }
         public string Password { get; private set; }
+        public bool isStident { get; set; }
+        public int age { get; set; }
+        public int phon { get; set; }
+        public Image image { get; set; }
+        public List<String> mesges { get; set; }
+
+
+
 
         public User(string firstName, string lastName, string email, string id, string userName, string password)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            ID = id;
-            UserName = userName;
-            Password = password;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.ID = id;
+            this.UserName = userName;
+            this.Password = password;
+            this.isStident = false;
+           
+
+
         }
 
         public string GetID()

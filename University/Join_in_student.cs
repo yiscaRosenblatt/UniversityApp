@@ -6,6 +6,8 @@ namespace University
     {
         private String UsurName;
         private String Password;
+
+
         public Join_in_student()
         {
             InitializeComponent();
@@ -31,14 +33,15 @@ namespace University
         private void button1_Click(object sender, EventArgs e)
         {
             bool isExists = false;
-            for (int i = 0; i < Sign_up_student.users.Count; i++)
+            for (int i = 0; i < Sign_up_student.userStudemt.Count; i++)
             {
-                if (Sign_up_student.users[i].GetUserName().Equals(UsurName) && Sign_up_student.users[i].GetPassword().Equals(Password))
-                {
+                if (Sign_up_student.userStudemt[i].GetUserName().Equals(UsurName) && Sign_up_student.userStudemt[i].GetPassword().Equals(Password)){
                     HomePage homePage = new HomePage();
                     homePage.Show();
                     this.Hide();
                     isExists = true;
+                    Sign_up_student.userStudemt[i].isStident = true; // מעדכן שהניכנס הוא תלמיד
+                    Sign_up_student.corentUserStudent = i; // מכניס את מי שעכשיו במערכת למשתנה
                 }
             }
             if (!isExists)

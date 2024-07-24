@@ -19,8 +19,8 @@ namespace University
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Messages messages = new Messages();
-            messages.Show();
+            PersonalInformation PersonalInformation = new PersonalInformation();
+            PersonalInformation.Show();
             this.Hide();
         }
     }
