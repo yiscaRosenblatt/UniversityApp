@@ -6,10 +6,10 @@ namespace University
 {
     public partial class FrontPage : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public PersonalInformation()
+        {
+            InitializeComponent();
+        }
 
         public FrontPage()
         {
@@ -22,20 +22,20 @@ namespace University
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+
         }
 
-        #region Windows Form Designer generated code
+        private void label4_Click(object sender, EventArgs e)
+        {
+            if (Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].isStident)
+            {
+                label4.Text = "name: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].FirstName + " " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].LastName;
+            }
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
             button1 = new Button();
             LecturerButton = new Button();
