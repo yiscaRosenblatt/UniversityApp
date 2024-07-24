@@ -37,6 +37,7 @@
             label3 = new Label();
             button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -100,6 +101,20 @@
             button2.TabIndex = 8;
             button2.Text = "connection";
             button2.UseVisualStyleBackColor = true;
+
+
+
+
+            button3.Location = new Point(26, 394);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 7;
+            button3.Text = "back";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+
+
+
             // 
             // Join_in_lecturer
             // 
@@ -113,6 +128,7 @@
             Controls.Add(textBox3);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Controls.Add(button3);
             Name = "Join_in_lecturer";
             Text = "Join_in_lecturer";
             ResumeLayout(false);
@@ -128,5 +144,6 @@
         private Label label3;
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }
