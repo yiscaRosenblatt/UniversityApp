@@ -130,9 +130,6 @@ namespace University
                 User newUser = new User(name, lestName, email, ID, userName, password);
                 AddUser(newUser);
             }
-
-            
-
         }
 
         private void AddUser(User newUser)
@@ -161,6 +158,8 @@ namespace University
                 userStudemt.Add(newUser);
                 MessageBox.Show("you sign up sucssfly");
             }
+
+            
 
         }
     }

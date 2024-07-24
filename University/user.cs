@@ -19,9 +19,9 @@ namespace University
         public string Password { get; private set; }
         public bool isStident { get; set; }
         public int age { get; set; }
-        public int phon { get; set; }
+        public float phon { get; set; }
         public Image image { get; set; }
-        public List<String> mesges { get; set; }
+        public List<String> mesges;
 
 
 
@@ -35,9 +35,8 @@ namespace University
             this.UserName = userName;
             this.Password = password;
             this.isStident = false;
-           
-
-
+            this.image = Image.FromFile(@"C:\Users\yisca\Desktop\לימודים\סמסטר ב\c#\na,na.png");
+            this.mesges = new List<string>();
         }
 
         public string GetID()

@@ -23,5 +23,12 @@ namespace University
             PersonalInformation.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            peopleSearch peopleSearch = new peopleSearch();
+            peopleSearch.Show();
+            this.Hide();
+        }
     }
 }
