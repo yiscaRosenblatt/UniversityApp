@@ -130,6 +130,9 @@ namespace University
                 User newUser = new User(name, lestName, email, ID, userName, password);
                 AddUser(newUser);
             }
+
+
+
         }
 
         private void AddUser(User newUser)
@@ -160,6 +163,11 @@ namespace University
             }
 
             
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
 
         }
     }

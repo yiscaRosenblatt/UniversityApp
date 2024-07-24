@@ -28,172 +28,249 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            inputLastName = new TextBox();
+            inputFirstName = new TextBox();
+            inputUserName = new TextBox();
+            inputPassword = new TextBox();
+            inputPasswordAuthentication = new TextBox();
+            inputID = new TextBox();
+            inputEmail = new TextBox();
+            titleSignUp = new Label();
+            firstName = new Label();
+            lastName = new Label();
+            id = new Label();
+            email = new Label();
+            userName = new Label();
+            password = new Label();
+            passwordAuthentication = new Label();
+            titleLecturer = new Label();
+            buttonBack = new Button();
+            buttonSignUp = new Button();
+            codeLecturer = new Label();
+            inputCodeLecturer = new TextBox();
             SuspendLayout();
             // 
-            // textBox1
+            // inputLastName
             // 
-            textBox1.Location = new Point(228, 221);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+            inputLastName.Location = new Point(202, 202);
+            inputLastName.Name = "inputLastName";
+            inputLastName.Size = new Size(140, 27);
+            inputLastName.TabIndex = 0;
+            inputLastName.TextChanged += inputLastName_TextChanged;
             // 
-            // textBox2
+            // inputFirstName
             // 
-            textBox2.Location = new Point(228, 134);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 1;
-            textBox2.TextChanged += textBox2_TextChanged;
+            inputFirstName.Location = new Point(202, 141);
+            inputFirstName.Name = "inputFirstName";
+            inputFirstName.Size = new Size(140, 27);
+            inputFirstName.TabIndex = 1;
+            inputFirstName.TextChanged += inputFirstName_TextChanged;
             // 
-            // textBox3
+            // inputUserName
             // 
-            textBox3.Location = new Point(431, 221);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 2;
-            textBox3.TextChanged += textBox3_TextChanged;
+            inputUserName.Location = new Point(631, 131);
+            inputUserName.Name = "inputUserName";
+            inputUserName.Size = new Size(140, 27);
+            inputUserName.TabIndex = 2;
+            inputUserName.TextChanged += inputUserName_TextChanged;
             // 
-            // textBox4
+            // inputPassword
             // 
-            textBox4.Location = new Point(431, 310);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 3;
-            textBox4.TextChanged += textBox4_TextChanged;
+            inputPassword.Location = new Point(631, 199);
+            inputPassword.Name = "inputPassword";
+            inputPassword.Size = new Size(140, 27);
+            inputPassword.TabIndex = 3;
+            inputPassword.TextChanged += inputPassword_TextChanged;
             // 
-            // textBox5
+            // inputPasswordAuthentication
             // 
-            textBox5.Location = new Point(431, 388);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 4;
+            inputPasswordAuthentication.Location = new Point(631, 271);
+            inputPasswordAuthentication.Name = "inputPasswordAuthentication";
+            inputPasswordAuthentication.Size = new Size(140, 27);
+            inputPasswordAuthentication.TabIndex = 4;
+            inputPasswordAuthentication.TextChanged += inputPasswordAuthentication_TextChanged;
             // 
-            // textBox6
+            // inputID
             // 
-            textBox6.Location = new Point(228, 310);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 5;
-            textBox6.TextChanged += textBox6_TextChanged;
+            inputID.Location = new Point(202, 267);
+            inputID.Name = "inputID";
+            inputID.Size = new Size(140, 27);
+            inputID.TabIndex = 5;
+            inputID.TextChanged += inputID_TextChanged;
             // 
-            // textBox7
+            // inputEmail
             // 
-            textBox7.Location = new Point(431, 134);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(125, 27);
-            textBox7.TabIndex = 6;
-            textBox7.TextChanged += textBox7_TextChanged;
+            inputEmail.Location = new Point(202, 334);
+            inputEmail.Name = "inputEmail";
+            inputEmail.Size = new Size(140, 27);
+            inputEmail.TabIndex = 6;
+            inputEmail.TextChanged += inputEmail_TextChanged;
             // 
-            // label1
+            // titleSignUp
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(354, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 20);
-            label1.TabIndex = 7;
-            label1.Text = "Sign up lecturer";
-            label1.Click += label1_Click;
+            titleSignUp.AutoSize = true;
+            titleSignUp.Font = new Font("Snap ITC", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titleSignUp.Location = new Point(358, 60);
+            titleSignUp.Name = "titleSignUp";
+            titleSignUp.Size = new Size(116, 27);
+            titleSignUp.TabIndex = 7;
+            titleSignUp.Text = "Sign up ";
             // 
-            // label2
+            // firstName
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(269, 111);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 20);
-            label2.TabIndex = 8;
-            label2.Text = "Name";
+            firstName.AutoSize = true;
+            firstName.BackColor = SystemColors.ActiveBorder;
+            firstName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            firstName.Location = new Point(83, 144);
+            firstName.Name = "firstName";
+            firstName.Size = new Size(83, 20);
+            firstName.TabIndex = 8;
+            firstName.Text = "First name";
             // 
-            // label3
+            // lastName
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(253, 198);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 20);
-            label3.TabIndex = 9;
-            label3.Text = "Last name";
+            lastName.AutoSize = true;
+            lastName.BackColor = SystemColors.ActiveBorder;
+            lastName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lastName.Location = new Point(82, 206);
+            lastName.Name = "lastName";
+            lastName.Size = new Size(81, 20);
+            lastName.TabIndex = 9;
+            lastName.Text = "Last name";
             // 
-            // label4
+            // id
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(283, 287);
-            label4.Name = "label4";
-            label4.Size = new Size(24, 20);
-            label4.TabIndex = 10;
-            label4.Text = "ID";
+            id.AutoSize = true;
+            id.BackColor = SystemColors.ActiveBorder;
+            id.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            id.Location = new Point(110, 277);
+            id.Name = "id";
+            id.Size = new Size(25, 20);
+            id.TabIndex = 10;
+            id.Text = "ID";
             // 
-            // label5
+            // email
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(468, 111);
-            label5.Name = "label5";
-            label5.Size = new Size(46, 20);
-            label5.TabIndex = 11;
-            label5.Text = "Email";
+            email.AutoSize = true;
+            email.BackColor = SystemColors.ActiveBorder;
+            email.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            email.Location = new Point(98, 341);
+            email.Name = "email";
+            email.Size = new Size(47, 20);
+            email.TabIndex = 11;
+            email.Text = "Email";
             // 
-            // label6
+            // userName
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(450, 198);
-            label6.Name = "label6";
-            label6.Size = new Size(79, 20);
-            label6.TabIndex = 12;
-            label6.Text = "User name";
+            userName.AutoSize = true;
+            userName.BackColor = SystemColors.ActiveBorder;
+            userName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            userName.Location = new Point(485, 137);
+            userName.Name = "userName";
+            userName.Size = new Size(84, 20);
+            userName.TabIndex = 12;
+            userName.Text = "User name";
             // 
-            // label7
+            // password
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(459, 287);
-            label7.Name = "label7";
-            label7.Size = new Size(70, 20);
-            label7.TabIndex = 13;
-            label7.Text = "Password";
+            password.AutoSize = true;
+            password.BackColor = SystemColors.ActiveBorder;
+            password.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            password.Location = new Point(485, 202);
+            password.Name = "password";
+            password.Size = new Size(76, 20);
+            password.TabIndex = 13;
+            password.Text = "Password";
             // 
-            // label8
+            // passwordAuthentication
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(412, 365);
-            label8.Name = "label8";
-            label8.Size = new Size(171, 20);
-            label8.TabIndex = 14;
-            label8.Text = "Password Authentication";
-            label8.Click += label8_Click;
+            passwordAuthentication.AutoSize = true;
+            passwordAuthentication.BackColor = SystemColors.ActiveBorder;
+            passwordAuthentication.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            passwordAuthentication.Location = new Point(425, 277);
+            passwordAuthentication.Name = "passwordAuthentication";
+            passwordAuthentication.Size = new Size(185, 20);
+            passwordAuthentication.TabIndex = 14;
+            passwordAuthentication.Text = "Password Authentication";
+            // 
+            // titleLecturer
+            // 
+            titleLecturer.AutoSize = true;
+            titleLecturer.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titleLecturer.Location = new Point(329, 23);
+            titleLecturer.Name = "titleLecturer";
+            titleLecturer.Size = new Size(175, 37);
+            titleLecturer.TabIndex = 15;
+            titleLecturer.Text = "lecturer";
+            titleLecturer.Click += titleLecturer_Click;
+            // 
+            // buttonBack
+            // 
+            buttonBack.BackColor = SystemColors.ActiveCaption;
+            buttonBack.Location = new Point(19, 426);
+            buttonBack.Name = "buttonBack";
+            buttonBack.Size = new Size(88, 29);
+            buttonBack.TabIndex = 16;
+            buttonBack.Text = "back";
+            buttonBack.UseVisualStyleBackColor = false;
+            buttonBack.Click += buttonBack_Click;
+            // 
+            // buttonSignUp
+            // 
+            buttonSignUp.BackColor = SystemColors.ActiveCaption;
+            buttonSignUp.Location = new Point(125, 426);
+            buttonSignUp.Name = "buttonSignUp";
+            buttonSignUp.Size = new Size(89, 31);
+            buttonSignUp.TabIndex = 17;
+            buttonSignUp.Text = "sign up";
+            buttonSignUp.UseVisualStyleBackColor = false;
+            buttonSignUp.Click += buttonSignUp_Click;
+            // 
+            // codeLecturer
+            // 
+            codeLecturer.AutoSize = true;
+            codeLecturer.BackColor = SystemColors.ActiveBorder;
+            codeLecturer.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            codeLecturer.Location = new Point(400, 344);
+            codeLecturer.Name = "codeLecturer";
+            codeLecturer.Size = new Size(210, 20);
+            codeLecturer.TabIndex = 18;
+            codeLecturer.Text = "Code for lecturers   (4 digits)";
+            // 
+            // inputCodeLecturer
+            // 
+            inputCodeLecturer.Location = new Point(631, 341);
+            inputCodeLecturer.Name = "inputCodeLecturer";
+            inputCodeLecturer.Size = new Size(140, 27);
+            inputCodeLecturer.TabIndex = 19;
             // 
             // Sign_up_lecturer
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            BackColor = SystemColors.ActiveBorder;
+            ClientSize = new Size(900, 469);
+            Controls.Add(inputCodeLecturer);
+            Controls.Add(codeLecturer);
+            Controls.Add(buttonSignUp);
+            Controls.Add(buttonBack);
+            Controls.Add(titleLecturer);
+            Controls.Add(passwordAuthentication);
+            Controls.Add(password);
+            Controls.Add(userName);
+            Controls.Add(email);
+            Controls.Add(id);
+            Controls.Add(lastName);
+            Controls.Add(firstName);
+            Controls.Add(titleSignUp);
+            Controls.Add(inputEmail);
+            Controls.Add(inputID);
+            Controls.Add(inputPasswordAuthentication);
+            Controls.Add(inputPassword);
+            Controls.Add(inputUserName);
+            Controls.Add(inputFirstName);
+            Controls.Add(inputLastName);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Name = "Sign_up_lecturer";
             Text = "Sign_up_lecturer";
             ResumeLayout(false);
@@ -202,20 +279,25 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
+        private TextBox inputLastName;
+        private TextBox inputFirstName;
+        private TextBox inputUserName;
+        private TextBox inputPassword;
+        private TextBox inputPasswordAuthentication;
+        private TextBox inputID;
+        private TextBox inputEmail;
+        private TextBox inputCodeLecturer;
+        private Label titleSignUp;
+        private Label firstName;
+        private Label lastName;
+        private Label id;
+        private Label email;
+        private Label userName;
+        private Label password;
+        private Label passwordAuthentication;
+        private Label titleLecturer;
+        private Label codeLecturer;
+        private Button buttonBack;
+        private Button buttonSignUp;
     }
 }

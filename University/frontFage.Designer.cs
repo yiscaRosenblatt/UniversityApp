@@ -36,6 +36,7 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Tw Cen MT Condensed Extra Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Location = new Point(488, 189);
             button1.Name = "button1";
             button1.Size = new Size(261, 100);
@@ -46,6 +47,8 @@
             // 
             // LecturerButton
             // 
+            LecturerButton.Font = new Font("Tw Cen MT Condensed Extra Bold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LecturerButton.ForeColor = SystemColors.ActiveCaptionText;
             LecturerButton.Location = new Point(85, 189);
             LecturerButton.Name = "LecturerButton";
             LecturerButton.Size = new Size(261, 100);
@@ -61,7 +64,7 @@
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlDark;
-            label1.Location = new Point(186, 53);
+            label1.Location = new Point(180, 53);
             label1.Name = "label1";
             label1.Size = new Size(471, 31);
             label1.TabIndex = 2;
@@ -71,7 +74,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(353, 128);
+            label2.BackColor = SystemColors.GradientInactiveCaption;
+            label2.Location = new Point(352, 103);
             label2.Name = "label2";
             label2.Size = new Size(114, 20);
             label2.TabIndex = 3;

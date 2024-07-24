@@ -30,105 +30,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            titleJoinIn = new Label();
+            inputUserName = new TextBox();
+            inputPassword = new TextBox();
+            lineUserName = new Label();
+            password = new Label();
+            buttonJoinIn = new Button();
+            buttonConnection = new Button();
+            titleLecturer = new Label();
+            buttonBack = new Button();
             SuspendLayout();
             // 
-            // label1
+            // titleJoinIn
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(344, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Join in lecturer";
-            label1.Click += label1_Click;
+            titleJoinIn.AutoSize = true;
+            titleJoinIn.Font = new Font("Snap ITC", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            titleJoinIn.Location = new Point(384, 85);
+            titleJoinIn.Name = "titleJoinIn";
+            titleJoinIn.Size = new Size(102, 27);
+            titleJoinIn.TabIndex = 0;
+            titleJoinIn.Text = "Join in ";
             // 
-            // textBox1
+            // inputUserName
             // 
-            textBox1.Location = new Point(344, 139);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(96, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            inputUserName.Location = new Point(342, 191);
+            inputUserName.Name = "inputUserName";
+            inputUserName.Size = new Size(152, 27);
+            inputUserName.TabIndex = 1;
+            inputUserName.TextChanged += inputUserName_TextChanged;
             // 
-            // textBox3
+            // inputPassword
             // 
-            textBox3.Location = new Point(344, 225);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(96, 27);
-            textBox3.TabIndex = 3;
+            inputPassword.Location = new Point(342, 266);
+            inputPassword.Name = "inputPassword";
+            inputPassword.Size = new Size(152, 27);
+            inputPassword.TabIndex = 3;
+            inputPassword.TextChanged += inputPassword_TextChanged;
             // 
-            // label2
+            // lineUserName
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(353, 116);
-            label2.Name = "label2";
-            label2.Size = new Size(79, 20);
-            label2.TabIndex = 5;
-            label2.Text = "User name";
+            lineUserName.AutoSize = true;
+            lineUserName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lineUserName.Location = new Point(376, 168);
+            lineUserName.Name = "lineUserName";
+            lineUserName.Size = new Size(84, 20);
+            lineUserName.TabIndex = 5;
+            lineUserName.Text = "User name";
+            lineUserName.Click += userName_Click;
             // 
-            // label3
+            // password
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(362, 202);
-            label3.Name = "label3";
-            label3.Size = new Size(70, 20);
-            label3.TabIndex = 6;
-            label3.Text = "Password";
+            password.AutoSize = true;
+            password.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            password.Location = new Point(386, 243);
+            password.Name = "password";
+            password.Size = new Size(76, 20);
+            password.TabIndex = 6;
+            password.Text = "Password";
             // 
-            // button1
+            // buttonJoinIn
             // 
-            button1.Location = new Point(267, 331);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 44);
-            button1.TabIndex = 7;
-            button1.Text = "Join in";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonJoinIn.BackColor = SystemColors.ActiveCaption;
+            buttonJoinIn.Location = new Point(274, 328);
+            buttonJoinIn.Name = "buttonJoinIn";
+            buttonJoinIn.Size = new Size(133, 44);
+            buttonJoinIn.TabIndex = 7;
+            buttonJoinIn.Text = "Join in";
+            buttonJoinIn.UseVisualStyleBackColor = false;
+            buttonJoinIn.Click += buttonJoinIn_Click;
             // 
-            // button2
+            // buttonConnection
             // 
-            button2.Location = new Point(407, 331);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 44);
-            button2.TabIndex = 8;
-            button2.Text = "connection";
-            button2.UseVisualStyleBackColor = true;
-
-
-
-
-            button3.Location = new Point(26, 394);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 7;
-            button3.Text = "back";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-
-
-
+            buttonConnection.BackColor = SystemColors.ActiveCaption;
+            buttonConnection.Location = new Point(432, 328);
+            buttonConnection.Name = "buttonConnection";
+            buttonConnection.Size = new Size(133, 44);
+            buttonConnection.TabIndex = 8;
+            buttonConnection.Text = "sign up\r\n";
+            buttonConnection.UseVisualStyleBackColor = false;
+            buttonConnection.Click += buttonConnection_Click;
+            // 
+            // titleLecturer
+            // 
+            titleLecturer.AutoSize = true;
+            titleLecturer.Font = new Font("Showcard Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            titleLecturer.Location = new Point(342, 38);
+            titleLecturer.Name = "titleLecturer";
+            titleLecturer.Size = new Size(167, 37);
+            titleLecturer.TabIndex = 9;
+            titleLecturer.Text = "lecturer\r\n";
+            titleLecturer.Click += titleLecturer_Click;
+            // 
+            // buttonBack
+            // 
+            buttonBack.BackColor = SystemColors.InactiveCaption;
+            buttonBack.Location = new Point(14, 403);
+            buttonBack.Name = "buttonBack";
+            buttonBack.Size = new Size(106, 35);
+            buttonBack.TabIndex = 10;
+            buttonBack.Text = "back";
+            buttonBack.UseVisualStyleBackColor = false;
+            buttonBack.Click += buttonBack_Click;
             // 
             // Join_in_lecturer
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
-            Controls.Add(button3);
+            BackColor = SystemColors.ActiveBorder;
+            ClientSize = new Size(900, 450);
+            Controls.Add(buttonBack);
+            Controls.Add(titleLecturer);
+            Controls.Add(buttonConnection);
+            Controls.Add(buttonJoinIn);
+            Controls.Add(password);
+            Controls.Add(lineUserName);
+            Controls.Add(inputPassword);
+            Controls.Add(inputUserName);
+            Controls.Add(titleJoinIn);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Name = "Join_in_lecturer";
             Text = "Join_in_lecturer";
             ResumeLayout(false);
@@ -137,13 +156,14 @@
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private Label label2;
-        private Label label3;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Label titleJoinIn;
+        private TextBox inputUserName;
+        private TextBox inputPassword;
+        private Label lineUserName;
+        private Label password;
+        private Button buttonJoinIn;
+        private Button buttonConnection;
+        private Label titleLecturer;
+        private Button buttonBack;
     }
 }

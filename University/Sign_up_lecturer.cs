@@ -8,56 +8,156 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace University
 {
     public partial class Sign_up_lecturer : Form
     {
+        private string P_name;
+        private string P_lastName;
+        private string P_password;
+        private string P_email;
+        private string P_ID;
+        private string P_userName;
+        private string P_passwordAuthentication;
+/*        private string P_codeLecturer;
+*/        public static List<User> users = new List<User>();
         public Sign_up_lecturer()
         {
             InitializeComponent();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+
+
+        private void titleLecturer_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e)
         {
+            Join_in_lecturer Join_in_lecturer = new Join_in_lecturer();
+            Join_in_lecturer.Show();
+            this.Hide();
+        }
+
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            if (P_name == null)
+            {
+                MessageBox.Show("You have to enter a name");
+            }
+            else if (P_lastName == null)
+            {
+                MessageBox.Show("You have to enter a lest name");
+            }
+            else if (P_ID == null)
+            {
+                MessageBox.Show("You have to enter a ID");
+            }
+            else if (P_email == null)
+            {
+                MessageBox.Show("You have to enter a email");
+            }
+            else if (P_userName == null)
+            {
+                MessageBox.Show("You have to enter a user name");
+            }
+            else if (P_password == null)
+            {
+                MessageBox.Show("You have to enter a password");
+            }
+            else if (P_passwordAuthentication == null)
+            {
+                MessageBox.Show("You have to enter a Password Authentication");
+            }
+          /*  else if (P_codeLecturer == null)
+            {
+                MessageBox.Show("You have to enter the code from the lecturer");
+            }
+            else if (P_codeLecturer != "3242")
+            {
+                MessageBox.Show("The code is incorrect");
+
+            }*/
+            else if (!P_password.Equals(P_passwordAuthentication))
+            {
+                MessageBox.Show("the password and the chekPassword not the same");
+            }
+            else
+            {
+                User newUser = new User(P_name, P_lastName, P_email, P_ID, P_userName, P_password);
+                AddUser(newUser);
+            }
+        }
+        private void AddUser(User newUser)
+        {
+            bool isTaking = false;
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].GetID().Equals(newUser.GetID()))
+                {
+                    MessageBox.Show("this ID in the system. Are you pretending to be someone else????????? ");
+                    isTaking = true;
+                }
+                else if (users[i].GetUserName().Equals(newUser.GetUserName()))
+                {
+                    MessageBox.Show("this User Name is taking. Try something else");
+                    isTaking = true;
+                }
+                else if (users[i].GetPassword().Equals(newUser.GetPassword()))
+                {
+                    MessageBox.Show("this Password is taking. Try something else");
+                    isTaking = true;
+                }
+            }
+            if (!isTaking)
+            {
+                users.Add(newUser);
+                MessageBox.Show("Your sign up was successful");
+            }
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void inputFirstName_TextChanged(object sender, EventArgs e)
         {
-            String name = textBox2.Text;
+            P_name = inputFirstName.Text;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void inputLastName_TextChanged(object sender, EventArgs e)
         {
-            String lastName = textBox1.Text;
+            P_lastName = inputLastName.Text;
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void inputID_TextChanged(object sender, EventArgs e)
         {
-            String ID = textBox6.Text;
+            P_ID = inputID.Text;
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void inputEmail_TextChanged(object sender, EventArgs e)
         {
-            String email = textBox7.Text;
+            P_email = inputEmail.Text;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void inputUserName_TextChanged(object sender, EventArgs e)
         {
-            String userName = textBox3.Text;
+            P_userName = inputUserName.Text;
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void inputPassword_TextChanged(object sender, EventArgs e)
         {
-            String password = textBox4.Text;
+            P_password = inputPassword.Text;
         }
 
-        
+        private void inputPasswordAuthentication_TextChanged(object sender, EventArgs e)
+        {
+            P_passwordAuthentication = inputPasswordAuthentication.Text;
+        }
+
+     /*   private void inputCodeLecturer_TextChanged(object sender, EventArgs e)
+        {
+            P_codeLecturer = inputCodeLecturer.Text;
+        }*/
     }
 }
