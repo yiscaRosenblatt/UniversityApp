@@ -66,7 +66,7 @@
             label1.Size = new Size(471, 31);
             label1.TabIndex = 2;
             label1.Text = "Welcome to the university's website";
-            label1.Click += label1_Click;
+           
             // 
             // label2
             // 

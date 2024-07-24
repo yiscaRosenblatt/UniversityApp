@@ -36,7 +36,7 @@ namespace University
         private void button3_Click(object sender, EventArgs e)
         {
             frontFage frontFage = new frontFage();
-            frontFage.Show();
+            frontFage.Show(this);
             this.Hide();
         }
     }

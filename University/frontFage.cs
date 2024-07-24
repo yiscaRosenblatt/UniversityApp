@@ -7,38 +7,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace University
 {
-    public partial class frontFage : Form
+    public partial class FrontPage : Form
     {
-        public frontFage()
+        private Color text;
+        private Color back;
+        private Color buttonColor = Color.LightGray; 
+
+        public FrontPage()
         {
-            InitializeComponent();
+            if (Settings.DarkMode)
+            {
+                text = Color.White;
+                back = Color.Black;
+            }
+            else
+            {
+                back = Color.White;
+                text = Color.Black;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Join_in_student Join_in_student = new Join_in_student();
-            Join_in_student.Show();
+            Join_in_student joinInStudent = new Join_in_student();
+            joinInStudent.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Join_in_lecturer Join_in_lecturer = new Join_in_lecturer();
-            Join_in_lecturer.Show();
+            Join_in_lecturer joinInLecturer = new Join_in_lecturer();
+            joinInLecturer.Show();
             this.Hide();
         }
     }
 }
+
