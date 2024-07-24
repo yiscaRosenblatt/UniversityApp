@@ -68,7 +68,7 @@ namespace University
 
         }
 
-     /*   private void titleLecturer_Click(object sender, EventArgs e)
+        private void titleLecturer_Click(object sender, EventArgs e)
         {
 
         }

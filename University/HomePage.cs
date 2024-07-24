@@ -40,7 +40,9 @@ namespace University
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            PersonalInformation PersonalInformation = new PersonalInformation();
+            PersonalInformation.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,7 +52,9 @@ namespace University
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            peopleSearch peopleSearch = new peopleSearch();
+            peopleSearch.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -58,11 +62,6 @@ namespace University
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            peopleSearch peopleSearch = new peopleSearch();
-            peopleSearch.Show();
-            this.Hide();
-        }
+       
     }
 }
