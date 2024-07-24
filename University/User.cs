@@ -22,7 +22,6 @@ namespace University
         public float phon { get; set; }
         public Image image { get; set; }
         public List<String> mesges;
-        public static string path = $"{Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\"))}\\Resources\\na,na.png";
 
 
 
@@ -37,7 +36,7 @@ namespace University
             this.UserName = userName;
             this.Password = password;
             this.isStident = false;
-            this.image = Image.FromFile(path);
+            this.image = Image.FromFile(@"C:\Users\yisca\Desktop\לימודים\סמסטר ב\c#\na,na.png");
             this.mesges = new List<string>();
         }
 
