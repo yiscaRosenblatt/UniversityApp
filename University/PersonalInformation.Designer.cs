@@ -58,7 +58,6 @@ namespace University
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            pictureBox1.Image = newImage;
             // 
             // dateTimePicker1
             // 
@@ -67,7 +66,6 @@ namespace University
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 4;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-    
             // 
             // label1
             // 
@@ -83,7 +81,7 @@ namespace University
             label2.AutoSize = true;
             label2.Location = new Point(623, 119);
             label2.Name = "label2";
-            label2.Size = new Size(73, 20);
+            label2.Size = new Size(94, 20);
             label2.TabIndex = 6;
             label2.Text = "lest Message";
             label2.Click += label2_Click;
@@ -104,13 +102,6 @@ namespace University
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(175, 104);
             listBox1.TabIndex = 8;
-            if (Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].mesges.Count > 0)
-            {
-                listBox1.Items.Add(Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].mesges[Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].mesges.Count - 1]);
-            }else
-            {
-                listBox1.Items.Add("No messages available.");
-            }
             // 
             // listBox2
             // 
@@ -119,17 +110,14 @@ namespace University
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(180, 104);
             listBox2.TabIndex = 9;
-
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(250, 119);
             label4.Name = "label4";
-            label4.Size = new Size(60, 20);
+            label4.Size = new Size(0, 20);
             label4.TabIndex = 10;
-            label4.Text = "Name: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].FirstName + " " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].LastName;
-
             label4.Click += label4_Click;
             // 
             // label5
@@ -137,10 +125,8 @@ namespace University
             label5.AutoSize = true;
             label5.Location = new Point(250, 167);
             label5.Name = "label5";
-            label5.Size = new Size(53, 20);
+            label5.Size = new Size(0, 20);
             label5.TabIndex = 11;
-            label5.Text = "Email: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].Email;
-
             label5.Click += label5_Click;
             // 
             // label6
@@ -148,10 +134,8 @@ namespace University
             label6.AutoSize = true;
             label6.Location = new Point(250, 208);
             label6.Name = "label6";
-            label6.Size = new Size(31, 20);
+            label6.Size = new Size(0, 20);
             label6.TabIndex = 12;
-            label6.Text = "ID: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].ID;
-
             label6.Click += label6_Click;
             // 
             // label7
@@ -159,10 +143,8 @@ namespace University
             label7.AutoSize = true;
             label7.Location = new Point(250, 251);
             label7.Name = "label7";
-            label7.Size = new Size(43, 20);
+            label7.Size = new Size(0, 20);
             label7.TabIndex = 13;
-            label7.Text = "Age: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].age;
-
             label7.Click += label7_Click;
             // 
             // label8
@@ -170,10 +152,8 @@ namespace University
             label8.AutoSize = true;
             label8.Location = new Point(250, 286);
             label8.Name = "label8";
-            label8.Size = new Size(57, 20);
+            label8.Size = new Size(0, 20);
             label8.TabIndex = 14;
-            label8.Text = "Phone: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].phon;
-
             label8.Click += label8_Click;
             // 
             // button1
@@ -229,6 +209,7 @@ namespace University
             Controls.Add(pictureBox1);
             Name = "PersonalInformation";
             Text = "PersonalInformation";
+            Load += PersonalInformation_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
