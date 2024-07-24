@@ -25,7 +25,7 @@ namespace University
 
             textBoxPhone = new TextBox
             {
-                Location = new Point(label8.Right + 10, label8.Top),
+                Location = new Point(label8.Right + 50, label8.Top),
                 Width = 50,
                 Visible = false
             };
@@ -43,7 +43,7 @@ namespace University
 
             textBoxAge = new TextBox
             {
-                Location = new Point(label7.Right + 10, label7.Top),
+                Location = new Point(label7.Right + 70, label7.Top),
                 Width = 50,
                 Visible = false
             };
@@ -222,6 +222,20 @@ namespace University
                     listBox1.Items.Add("No messages available.");
                 }
             }
+            if (Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].isStident)
+            {
+                label4.Text = "Name: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].FirstName + " " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].LastName;
+            }
+            if (Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].isStident)
+            {
+                label5.Text = "Email: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].Email;
+            }
+            if (Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].isStident)
+            {
+                label6.Text = "ID: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].ID;
+            }
+            label7.Text = "Age: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].age;
+            label8.Text = "Phone: " + Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].phon;
         }
     }
 }
