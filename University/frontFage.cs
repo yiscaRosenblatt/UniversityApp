@@ -18,9 +18,30 @@ namespace University
     {
         private Color text;
         private Color back;
-        private Color buttonColor = Color.LightGray; 
+        private Color buttonColor = Color.LightGray;
 
-        public FrontPage()
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Join_in_student joinInStudent = new Join_in_student();
+            joinInStudent.Show();
+            this.Hide();
+        }
+
+
+
+        private void FrontPage_Load(object sender, EventArgs e)
         {
             if (Settings.DarkMode)
             {
@@ -34,29 +55,14 @@ namespace University
             }
         }
 
-       /* private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Join_in_student joinInStudent = new Join_in_student();
-            joinInStudent.Show();
-            this.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void LecturerButton_Click(object sender, EventArgs e)
         {
             Join_in_lecturer joinInLecturer = new Join_in_lecturer();
             joinInLecturer.Show();
             this.Hide();
         }
+
+     
     }
 }
 
