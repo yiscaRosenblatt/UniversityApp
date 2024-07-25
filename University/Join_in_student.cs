@@ -33,15 +33,15 @@ namespace University
         private void button1_Click(object sender, EventArgs e)
         {
             bool isExists = false;
-            for (int i = 0; i < Sign_up_student.userStudemt.Count; i++)
+            for (int i = 0; i < Sign_up_lecturer.users.Count; i++)
             {
-                if (Sign_up_student.userStudemt[i].GetUserName().Equals(UsurName) && Sign_up_student.userStudemt[i].GetPassword().Equals(Password)){
+                if (Sign_up_lecturer.users[i].GetUserName().Equals(UsurName) && Sign_up_lecturer.users[i].GetPassword().Equals(Password)){
                     HomePage homePage = new HomePage();
                     homePage.Show();
                     this.Hide();
                     isExists = true;
-                    Sign_up_student.userStudemt[i].isStident = true; // מעדכן שהניכנס הוא תלמיד
-                    Sign_up_student.corentUserStudent = i; // מכניס את מי שעכשיו במערכת למשתנה
+
+                    Sign_up_lecturer.corentUser = i; // מכניס את מי שעכשיו במערכת למשתנה
                 }
             }
             if (!isExists)

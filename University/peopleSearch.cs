@@ -14,147 +14,69 @@ namespace University
 {
     public partial class peopleSearch : Form
     {
-        String Search = "";
-        private System.Windows.Forms.Label textBoxShrech;
-        private Button buttonMesges;
-        private TextBox writingMessage;
-        private Button send;
-
-
-
 
         public peopleSearch()
         {
             InitializeComponent();
 
-            textBoxShrech = new System.Windows.Forms.Label
-            {
-                Location = new Point(35, 124),
-                Width = 500,
-                Visible = false
-
-            };
-            this.Controls.Add(textBoxShrech);
-
-            buttonMesges = new Button
-            {
-                Location = new Point(textBoxShrech.Right + 20, 124),
-                Visible = false,
-                Text = "mesages"
-            };
-            buttonMesges.Click += new EventHandler(this.buttonMesges_Click);
-
-            this.Controls.Add(buttonMesges);
-
-            writingMessage = new TextBox
-            {
-                Location = new Point(textBoxShrech.Left, textBoxShrech.Top + 50),
-                Visible = false,
-                Width = 500,
-                Height = 500
-            };
-
-            this.Controls.Add(writingMessage);
-
-            send = new Button
-            {
-                Location = new Point(writingMessage.Left, writingMessage.Top + 50),
-                Visible = false,
-
-            };
-            send.Click += new EventHandler(this.send_Click);
-            this.Controls.Add(send);
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Search = textBox1.Text;
-           
-        }
-        int sendPeople = 0;
-        String firstName = "";
-        String lastName = "";
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (Sign_up_student.userStudemt[Sign_up_student.corentUserStudent].isStident)
+            people_listView.Items.Clear();
+            if (!this.textBox1.Text.Equals(""))
             {
-               
-                if (!string.IsNullOrWhiteSpace(Search))
+                foreach (User student in Sign_up_lecturer.users)
                 {
-                   
-                    int spaceIndex = Search.IndexOf(' ');
-                    if (spaceIndex > 0) 
+                    if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isStident == true)
                     {
-                        firstName = Search.Substring(0, spaceIndex);
-                        lastName = Search.Substring(spaceIndex + 1);
+                        if (student.isStident) continue;
+
+                        if ((student.FirstName + " " + student.LastName).Contains(textBox1.Text))
+                        {
+                            string[] row = { student.FirstName, student.LastName, student.Email };
+                            ListViewItem item = new ListViewItem(row);
+                            people_listView.Items.Add(item);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter both first and last names separated by a space.");
-                        return;
-                    }
-
-                  
-                    if (char.IsLetter(Search[0]))
-                    {
-                        for (int i = 0; i < Sign_up_student.userStudemt.Count; i++)
+                        if ((student.FirstName + " " + student.LastName).Contains(textBox1.Text))
                         {
-                            var student = Sign_up_student.userStudemt[i];
-                            if (student.FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase) &&
-                                student.LastName.Equals(lastName, StringComparison.OrdinalIgnoreCase))
-                            {
-                                textBoxShrech.Visible = true;
-                                buttonMesges.Visible = true;
-                                textBoxShrech.Text = "Name: " + student.FirstName + " " + student.LastName + " Email: " + student.Email;
-                                sendPeople = i;
-                                return; 
-                            }
+                            string[] row = { student.FirstName, student.LastName, student.Email };
+                            ListViewItem item = new ListViewItem(row);
+                            people_listView.Items.Add(item);
                         }
-                        MessageBox.Show("Student not found. Please check the entered name.");
                     }
+
                 }
-                else
+                foreach (ColumnHeader column in this.people_listView.Columns)
                 {
-                    MessageBox.Show("Please enter a search query.");
+                    column.Width = -2; // Auto resize based on content
                 }
-            }
-        }
-
-        private void buttonMesges_Click(object sender, EventArgs e)
-        {
-            writingMessage.Visible = true;
-            send.Visible = true;
-        }
-
-        
-        private void writingMessage_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void send_Click(object sender, EventArgs e)
-        {
-            string message = writingMessage.Text;
-            if (!string.IsNullOrWhiteSpace(message))
-            {
-                Sign_up_student.userStudemt[sendPeople].mesges.Add(message);
-                MessageBox.Show("Message sent successfully!");
-                writingMessage.Clear();
             }
             else
             {
-                MessageBox.Show("Please enter a message before sending.");
+                if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isStident == true)
+                {
+                    displayAllStudent();
+                }
+                else
+                {
+                    displayAllStudentAndlecturer();
+                }
             }
-        }
 
+
+
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -162,6 +84,76 @@ namespace University
             HomePage HomePage = new HomePage();
             HomePage.Show();
             this.Hide();
+        }
+
+        private void peopleSearch_Load(object sender, EventArgs e)
+        {
+            people_listView.View = View.Details;
+            people_listView.Columns.Add("first name", -2, HorizontalAlignment.Left);
+            people_listView.Columns.Add("Last Name", -2);
+            people_listView.Columns.Add("Email", -2);
+            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isStident == true)
+            {
+                displayAllStudent();
+            }
+            else
+            {
+                displayAllStudentAndlecturer();
+            }
+            
+        }
+
+        private void displayAllStudent()
+        {
+            people_listView.Items.Clear();
+            foreach (User student in Sign_up_lecturer.users)
+            {
+
+                if (!student.isStident) continue;
+                string[] row = { student.FirstName, student.LastName, student.Email };
+                ListViewItem item = new ListViewItem(row);
+                people_listView.Items.Add(item);
+            }
+
+            foreach (ColumnHeader column in this.people_listView.Columns)
+            {
+                column.Width = -2; 
+            }
+
+        }
+
+        private void displayAllStudentAndlecturer()
+        {
+            people_listView.Items.Clear();
+            foreach (User student in Sign_up_lecturer.users)
+            {
+                string[] row = { student.FirstName, student.LastName, student.Email };
+                ListViewItem item = new ListViewItem(row);
+                people_listView.Items.Add(item);
+            }
+
+            foreach (ColumnHeader column in this.people_listView.Columns)
+            {
+                column.Width = -2; 
+            }
+        }
+
+
+        private void clicked_user_item(object sender, EventArgs e)
+        {
+            ListViewItem clickedUser = people_listView.SelectedItems[0];
+            string userEmail = clickedUser.SubItems[2].Text;
+            string userName = clickedUser.SubItems[0].Text + " " + clickedUser.SubItems[1].Text;
+            User U = Sign_up_lecturer.users.FirstOrDefault(x => x.Email.Equals(userEmail));
+            sendMessage sendMessage = new sendMessage(userName, U);
+            sendMessage.Show();
+
+
+        }
+
+        private void people_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

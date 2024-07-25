@@ -23,6 +23,8 @@ namespace University
         private string P_passwordAuthentication;
 /*        private string P_codeLecturer;
 */        public static List<User> users = new List<User>();
+        public static int corentUser { get; set; }
+
         public Sign_up_lecturer()
         {
             InitializeComponent();

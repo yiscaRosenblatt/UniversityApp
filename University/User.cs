@@ -19,7 +19,7 @@ namespace University
         public string Password { get; private set; }
         public bool isStident { get; set; }
         public int age { get; set; }
-        public float phon { get; set; }
+        public string phon { get; set; }
         public Image image { get; set; }
         public List<String> mesges;
         public static string path = $"{Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\"))}\\Resources\\na,na.png";

@@ -49,6 +49,7 @@ namespace University
                     homePage.Show();
                     this.Hide();
                     isExists = true;
+                    Sign_up_lecturer.corentUser = i;
                 }
             }
             if (!isExists)

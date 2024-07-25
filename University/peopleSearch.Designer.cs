@@ -30,9 +30,9 @@
         {
             textBox1 = new TextBox();
             label1 = new Label();
-            button1 = new Button();
             label2 = new Label();
             button2 = new Button();
+            people_listView = new ListView();
             SuspendLayout();
             // 
             // textBox1
@@ -52,16 +52,6 @@
             label1.TabIndex = 1;
             label1.Text = "people search";
             label1.Click += label1_Click;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(603, 69);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "search\r\n";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -83,21 +73,34 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // people_listView
+            // 
+            people_listView.Location = new Point(136, 121);
+            people_listView.Name = "people_listView";
+            people_listView.Size = new Size(470, 294);
+            people_listView.TabIndex = 17;
+            people_listView.UseCompatibleStateImageBehavior = false;
+            people_listView.ItemActivate += clicked_user_item;
+            people_listView.SelectedIndexChanged += people_listView_SelectedIndexChanged;
+            // 
             // peopleSearch
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(people_listView);
             Controls.Add(button2);
             Controls.Add(label2);
-            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Name = "peopleSearch";
             Text = "peopleSearch";
+            Load += peopleSearch_Load;
             ResumeLayout(false);
             PerformLayout();
         }
+
+
 
         #endregion
 
@@ -106,5 +109,6 @@
         private Button button1;
         private Label label2;
         private Button button2;
+        private ListView people_listView;
     }
 }
