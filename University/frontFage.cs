@@ -17,10 +17,10 @@ namespace University
             InitializeComponent();
         }
 
-       /* private void label1_Click(object sender, EventArgs e)
-        {
+        /* private void label1_Click(object sender, EventArgs e)
+         {
 
-        }*/
+         }*/
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -39,6 +39,11 @@ namespace University
             Join_in_lecturer Join_in_lecturer = new Join_in_lecturer();
             Join_in_lecturer.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
