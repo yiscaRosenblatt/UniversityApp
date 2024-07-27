@@ -61,6 +61,7 @@
             label2.Size = new Size(0, 20);
             label2.TabIndex = 3;
             label2.Click += label2_Click;
+          
             // 
             // button2
             // 

@@ -26,6 +26,7 @@ namespace University
         private string userName;
         private string chekPassword;
        
+        public static List<Student> students = new List<Student>();
 
 
 
@@ -129,7 +130,21 @@ namespace University
                 User newUser = new User(name, lestName, email, ID, userName, password);
                 newUser.isStident = true;
                 AddUser(newUser);
-                
+                if (students.Count == 0)
+                {
+                    Student student = new Student(0);
+                    students.Add(student);
+                    
+                }
+                else
+                {
+                    for (int i = 1; i < Sign_up_lecturer.users.Count; i++)
+                    {
+                        Student student = new Student(students[i-1].numStudent + 1);
+                        students.Add(student);
+                    }
+                }
+               
             }
 
 

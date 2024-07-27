@@ -17,11 +17,10 @@ namespace University
         
 
 
-       public Student(int numStudent, String Route, string specialization, int currentNkz, int totalNkz, bool isTeach) 
+       public Student(int numStudent) 
         {
             this.numStudent = numStudent;
-            this.Route = Route;
-            this.specialization = specialization;
+           /* this.Route = Route;
             this.currentNkz = currentNkz;
             this.totalNkz = totalNkz;
             if (isTeach)
@@ -31,7 +30,7 @@ namespace University
             }else
             {
                 this.isTeach = false;
-            }
+            }*/
         }
 
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using University.Datamodels;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace University
@@ -21,7 +22,8 @@ namespace University
         public int age { get; set; }
         public string phon { get; set; }
         public Image image { get; set; }
-        public List<String> mesges;
+        public bool isDepartmentHead { get; set; }
+        public List<Messages_setting> mesges;
         public static string path = $"{Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\"))}\\Resources\\na,na.png";
 
 
@@ -37,8 +39,9 @@ namespace University
             this.UserName = userName;
             this.Password = password;
             this.isStident = false;
+            this.isDepartmentHead = false;
             this.image = Image.FromFile(path);
-            this.mesges = new List<string>();
+            this.mesges = new List<Messages_setting>();
         }
 
         public string GetID()

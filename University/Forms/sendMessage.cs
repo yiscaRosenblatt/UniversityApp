@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University;
+using University.Datamodels;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace University
 {
@@ -31,7 +33,8 @@ namespace University
         private void button1_Click(object sender, EventArgs e)
         {
             string message = richTextBox1.Text;
-            U.mesges.Add(message);
+            Messages_setting newMessages = new Messages_setting(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].FirstName + " " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].LastName, message, DateTime.Now);
+            U.mesges.Add(newMessages);
             MessageBox.Show("the message send");
             this.Close();
         }

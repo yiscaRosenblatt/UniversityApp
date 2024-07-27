@@ -31,12 +31,9 @@ namespace University
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            dateTimePicker1 = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -45,27 +42,25 @@ namespace University
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            button_Course = new Button();
+            button_Student = new Button();
+            button_Roures = new Button();
+            button_lectueer = new Button();
+            listView1 = new ListView();
+            listView2 = new ListView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.na_na;
-            pictureBox1.Location = new Point(30, 81);
+            pictureBox1.Location = new Point(23, 128);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(161, 199);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(548, 26);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 4;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label1
             // 
@@ -79,7 +74,7 @@ namespace University
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(623, 119);
+            label2.Location = new Point(639, 109);
             label2.Name = "label2";
             label2.Size = new Size(94, 20);
             label2.TabIndex = 6;
@@ -89,32 +84,16 @@ namespace University
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(607, 274);
+            label3.Location = new Point(623, 264);
             label3.Name = "label3";
             label3.Size = new Size(101, 20);
             label3.TabIndex = 7;
             label3.Text = "star messages";
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(574, 155);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(175, 104);
-            listBox1.TabIndex = 8;
-            // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(574, 306);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(180, 104);
-            listBox2.TabIndex = 9;
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(250, 119);
+            label4.Location = new Point(220, 154);
             label4.Name = "label4";
             label4.Size = new Size(0, 20);
             label4.TabIndex = 10;
@@ -123,7 +102,7 @@ namespace University
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(250, 167);
+            label5.Location = new Point(220, 202);
             label5.Name = "label5";
             label5.Size = new Size(0, 20);
             label5.TabIndex = 11;
@@ -132,7 +111,7 @@ namespace University
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(250, 208);
+            label6.Location = new Point(220, 243);
             label6.Name = "label6";
             label6.Size = new Size(0, 20);
             label6.TabIndex = 12;
@@ -141,7 +120,7 @@ namespace University
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(250, 251);
+            label7.Location = new Point(220, 286);
             label7.Name = "label7";
             label7.Size = new Size(0, 20);
             label7.TabIndex = 13;
@@ -150,7 +129,7 @@ namespace University
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(250, 286);
+            label8.Location = new Point(220, 321);
             label8.Name = "label8";
             label8.Size = new Size(0, 20);
             label8.TabIndex = 14;
@@ -158,7 +137,7 @@ namespace University
             // 
             // button1
             // 
-            button1.Location = new Point(58, 286);
+            button1.Location = new Point(51, 333);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 15;
@@ -187,11 +166,70 @@ namespace University
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button_Course
+            // 
+            button_Course.Location = new Point(442, 149);
+            button_Course.Name = "button_Course";
+            button_Course.Size = new Size(94, 29);
+            button_Course.TabIndex = 18;
+            button_Course.Text = "Course";
+            button_Course.UseVisualStyleBackColor = true;
+            // 
+            // button_Student
+            // 
+            button_Student.Location = new Point(442, 202);
+            button_Student.Name = "button_Student";
+            button_Student.Size = new Size(94, 29);
+            button_Student.TabIndex = 19;
+            button_Student.Text = "Student";
+            button_Student.UseVisualStyleBackColor = true;
+            // 
+            // button_Roures
+            // 
+            button_Roures.Location = new Point(442, 259);
+            button_Roures.Name = "button_Roures";
+            button_Roures.Size = new Size(94, 29);
+            button_Roures.TabIndex = 20;
+            button_Roures.Text = "Roures";
+            button_Roures.UseVisualStyleBackColor = true;
+            // 
+            // button_lectueer
+            // 
+            button_lectueer.Location = new Point(442, 317);
+            button_lectueer.Name = "button_lectueer";
+            button_lectueer.Size = new Size(94, 29);
+            button_lectueer.TabIndex = 21;
+            button_lectueer.Text = "lectueer";
+            button_lectueer.UseVisualStyleBackColor = true;
+            button_lectueer.Click += button_lectueer_Click;
+            // 
+            // listView1
+            // 
+            listView1.Location = new Point(563, 132);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(246, 121);
+            listView1.TabIndex = 22;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView2
+            // 
+            listView2.Location = new Point(563, 301);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(246, 121);
+            listView2.TabIndex = 23;
+            listView2.UseCompatibleStateImageBehavior = false;
+            // 
             // PersonalInformation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 450);
+            Controls.Add(listView2);
+            Controls.Add(listView1);
+            Controls.Add(button_lectueer);
+            Controls.Add(button_Roures);
+            Controls.Add(button_Student);
+            Controls.Add(button_Course);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -200,16 +238,13 @@ namespace University
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dateTimePicker1);
             Controls.Add(pictureBox1);
             Name = "PersonalInformation";
             Text = "PersonalInformation";
-            Load += PersonalInformation_Load;
+            Load += PersonalInformation_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -219,12 +254,10 @@ namespace University
 
         private PictureBox pictureBox1;
       
-        private DateTimePicker dateTimePicker1;
+       
         private Label label1;
         private Label label2;
         private Label label3;
-        private ListBox listBox1;
-        private ListBox listBox2;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -233,5 +266,11 @@ namespace University
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button_Course;
+        private Button button_Student;
+        private Button button_Roures;
+        private Button button_lectueer;
+        private ListView listView1;
+        private ListView listView2;
     }
 }

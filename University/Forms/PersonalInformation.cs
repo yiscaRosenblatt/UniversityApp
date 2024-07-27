@@ -88,29 +88,29 @@ namespace University
 
         private void label7_Click(object sender, EventArgs e)
         {
-           
-             
-           
+
+
+
         }
 
         private void ButtonUpdateAge_Click(object sender, EventArgs e)
         {
-           
-                if (int.TryParse(textBoxAge.Text, out int newAge) && newAge > 0)
-                {
 
-                    Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age = newAge;
-                    textBoxAge.Visible = false;
-                    buttonUpdateAge.Visible = false;
-                    label7.Text = "Age: " + newAge;
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a valid age.", "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
-         
-           
+            if (int.TryParse(textBoxAge.Text, out int newAge) && newAge > 0)
+            {
+
+                Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age = newAge;
+                textBoxAge.Visible = false;
+                buttonUpdateAge.Visible = false;
+                label7.Text = "Age: " + newAge;
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid age.", "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -121,12 +121,12 @@ namespace University
                     textBoxPhone.Visible = true;
                     buttonUpdatePhone.Visible = true;
                 }*/
-               /* else
-                {
-                    label8.Text = "Phone: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon;
-                }*/
-            
-          
+            /* else
+             {
+                 label8.Text = "Phone: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon;
+             }*/
+
+
         }
         private void ButtonUpdatePhone_Click(object sender, EventArgs e)
         {
@@ -136,39 +136,39 @@ namespace University
             textBoxPhone.Visible = false;
             buttonUpdatePhone.Visible = false;
             label8.Text = "Phone: " + newPhone;
-                
-           
-           
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         Image newImage;
         private void button1_Click(object sender, EventArgs e)
         {
-             
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-                openFileDialog.Title = "Select a Profile Picture";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            openFileDialog.Title = "Select a Profile Picture";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
                 {
-                    try
-                    {
-                        newImage = Image.FromFile(openFileDialog.FileName);
-                        pictureBox1.Image = newImage;
-                        Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image = newImage;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Failed to load image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    newImage = Image.FromFile(openFileDialog.FileName);
+                    pictureBox1.Image = newImage;
+                    Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image = newImage;
                 }
-            
-            
-                
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to load image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
 
         }
 
@@ -196,21 +196,28 @@ namespace University
 
         }
 
-        private void PersonalInformation_Load(object sender, EventArgs e)
+
+
+
+
+
+
+
+       /* private void PersonalInformation_Load(object sender, EventArgs e)
         {
-           
-            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count > 0)
+
+            *//*if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count > 0)
             {
-                 listBox1.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1]);
+                listView1.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1].text);
             }
             else
             {
-                listBox1.Items.Add("No messages available.");
-            }
+                listView1.Items.Add("No messages available.");
+            }*//*
             label4.Text = "Name: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].FirstName + " " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].LastName;
-            
+
             label5.Text = "Email: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].Email;
-           
+
             label6.Text = "ID: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].ID;
 
             if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age == 0)
@@ -237,6 +244,97 @@ namespace University
             }
             pictureBox1.Image = Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image;
 
+
+            button_Course.Visible = false;
+            button_lectueer.Visible = false;
+            button_Roures.Visible = false;
+            button_Student.Visible = false;
+
+
+
+            listView1.View = View.Details;
+            listView1.Columns.Add("name", -2, HorizontalAlignment.Left);
+            listView1.Columns.Add("text", -2);
+            listView1.Columns.Add("date", -2);
+
+            displayMseges();
+
+        }*/
+
+        private void displayMseges()
+        {
+            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count > 0)
+            {
+                listView1.Items.Clear();
+                string sendName = Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1].SendedName;
+                string text = Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1].text;
+                string date = Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1].Date.ToString("yyyy-MM-dd HH:mm:ss"); ;
+
+                string[] row = { sendName, text, date };
+                ListViewItem item = new ListViewItem(row);
+                listView1.Items.Add(item);
+
+
+                foreach (ColumnHeader column in this.listView1.Columns)
+                {
+                    column.Width = -2;
+                }
+
+            }
+
+        }
+
+        private void button_lectueer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PersonalInformation_Load_1(object sender, EventArgs e)
+        {
+            label4.Text = "Name: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].FirstName + " " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].LastName;
+
+            label5.Text = "Email: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].Email;
+
+            label6.Text = "ID: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].ID;
+
+            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age == 0)
+            {
+                label7.Text = "Age: ";
+                textBoxAge.Visible = true;
+                buttonUpdateAge.Visible = true;
+            }
+            else
+            {
+                label7.Text = "Age: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age;
+            }
+
+
+            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon == null)
+            {
+                label8.Text = "Phone: ";
+                textBoxPhone.Visible = true;
+                buttonUpdatePhone.Visible = true;
+            }
+            else
+            {
+                label8.Text = "Phone: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon;
+            }
+            pictureBox1.Image = Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image;
+
+
+            button_Course.Visible = false;
+            button_lectueer.Visible = false;
+            button_Roures.Visible = false;
+            button_Student.Visible = false;
+
+
+
+            listView1.View = View.Details;
+            listView1.Columns.Add("name", -2, HorizontalAlignment.Left);
+            listView1.Columns.Add("text", -2);
+            listView1.Columns.Add("date", -2);
+
+            displayMseges();
 
         }
     }
