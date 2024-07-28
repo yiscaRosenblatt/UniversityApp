@@ -132,7 +132,7 @@ namespace University
                 AddUser(newUser);
                 if (students.Count == 0)
                 {
-                    Student student = new Student(0);
+                    Student student = new Student(name, lestName, 0);
                     students.Add(student);
                     
                 }
@@ -140,7 +140,7 @@ namespace University
                 {
                     for (int i = 1; i < Sign_up_lecturer.users.Count; i++)
                     {
-                        Student student = new Student(students[i-1].numStudent + 1);
+                        Student student = new Student(name, lestName, students[i-1].numStudent + 1);
                         students.Add(student);
                     }
                 }

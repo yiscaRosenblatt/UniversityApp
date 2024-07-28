@@ -8,6 +8,8 @@ namespace University
 {
     public class Student
     {
+        public String lestName { get; set; }
+        public String firstName { get; set; }
         public int numStudent { get; private set; }
         public String Route { get; private set; }
         public string specialization { get; private set; }
@@ -17,8 +19,10 @@ namespace University
         
 
 
-       public Student(int numStudent) 
+       public Student(string lestName, String firstName, int numStudent) 
         {
+            this.firstName = firstName;
+            this.lestName = lestName;
             this.numStudent = numStudent;
            /* this.Route = Route;
             this.currentNkz = currentNkz;

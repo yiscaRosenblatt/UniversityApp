@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using University.Forms;
 
 namespace University
 {
@@ -203,63 +204,63 @@ namespace University
 
 
 
-       /* private void PersonalInformation_Load(object sender, EventArgs e)
-        {
+        /* private void PersonalInformation_Load(object sender, EventArgs e)
+         {
 
-            *//*if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count > 0)
-            {
-                listView1.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1].text);
-            }
-            else
-            {
-                listView1.Items.Add("No messages available.");
-            }*//*
-            label4.Text = "Name: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].FirstName + " " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].LastName;
+             *//*if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count > 0)
+             {
+                 listView1.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1].text);
+             }
+             else
+             {
+                 listView1.Items.Add("No messages available.");
+             }*//*
+             label4.Text = "Name: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].FirstName + " " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].LastName;
 
-            label5.Text = "Email: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].Email;
+             label5.Text = "Email: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].Email;
 
-            label6.Text = "ID: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].ID;
+             label6.Text = "ID: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].ID;
 
-            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age == 0)
-            {
-                label7.Text = "Age: ";
-                textBoxAge.Visible = true;
-                buttonUpdateAge.Visible = true;
-            }
-            else
-            {
-                label7.Text = "Age: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age;
-            }
-
-
-            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon == null)
-            {
-                label8.Text = "Phone: ";
-                textBoxPhone.Visible = true;
-                buttonUpdatePhone.Visible = true;
-            }
-            else
-            {
-                label8.Text = "Phone: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon;
-            }
-            pictureBox1.Image = Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image;
+             if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age == 0)
+             {
+                 label7.Text = "Age: ";
+                 textBoxAge.Visible = true;
+                 buttonUpdateAge.Visible = true;
+             }
+             else
+             {
+                 label7.Text = "Age: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age;
+             }
 
 
-            button_Course.Visible = false;
-            button_lectueer.Visible = false;
-            button_Roures.Visible = false;
-            button_Student.Visible = false;
+             if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon == null)
+             {
+                 label8.Text = "Phone: ";
+                 textBoxPhone.Visible = true;
+                 buttonUpdatePhone.Visible = true;
+             }
+             else
+             {
+                 label8.Text = "Phone: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon;
+             }
+             pictureBox1.Image = Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image;
+
+
+             button_Course.Visible = false;
+             button_lectueer.Visible = false;
+             button_Roures.Visible = false;
+             button_Student.Visible = false;
 
 
 
-            listView1.View = View.Details;
-            listView1.Columns.Add("name", -2, HorizontalAlignment.Left);
-            listView1.Columns.Add("text", -2);
-            listView1.Columns.Add("date", -2);
+             listView1.View = View.Details;
+             listView1.Columns.Add("name", -2, HorizontalAlignment.Left);
+             listView1.Columns.Add("text", -2);
+             listView1.Columns.Add("date", -2);
 
-            displayMseges();
+             displayMseges();
 
-        }*/
+         }*/
 
         private void displayMseges()
         {
@@ -336,6 +337,28 @@ namespace University
 
             displayMseges();
 
+            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isDepartmentHead)
+            {
+                button_Course.Visible = true;
+                button_lectueer.Visible = true;
+                button_Roures.Visible = true;
+                button_Student.Visible = true;
+
+
+            }
+
+
+
+        }
+
+        private void button_Course_Click(object sender, EventArgs e)
+        {
+            Courses Courses = new Courses();
+            Courses.Show();
+
+           
+           
+           
         }
     }
 }
