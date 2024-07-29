@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using University.University;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace University
 {
@@ -21,9 +23,12 @@ namespace University
         private string P_ID;
         private string P_userName;
         private string P_passwordAuthentication;
-/*        private string P_codeLecturer;
-*/        public static List<User> users = new List<User>();
-        internal static int corentUser;
+        /*        private string P_codeLecturer;
+        */
+        public static List<User> users = new List<User>();
+        public static List<Lecturer> lecturers = new List<Lecturer>();
+        public static List<DepartmentHead> DepartmentHeads = new List<DepartmentHead>();
+        public static int corentUser { get; set; }
 
         public Sign_up_lecturer()
         {
@@ -74,23 +79,33 @@ namespace University
             {
                 MessageBox.Show("You have to enter a Password Authentication");
             }
-          /*  else if (P_codeLecturer == null)
-            {
-                MessageBox.Show("You have to enter the code from the lecturer");
-            }
-            else if (P_codeLecturer != "3242")
-            {
-                MessageBox.Show("The code is incorrect");
+            /*  else if (P_codeLecturer == null)
+              {
+                  MessageBox.Show("You have to enter the code from the lecturer");
+              }
+              else if (P_codeLecturer != "3242")
+              {
+                  MessageBox.Show("The code is incorrect");
 
-            }*/
+              }*/
             else if (!P_password.Equals(P_passwordAuthentication))
             {
                 MessageBox.Show("the password and the chekPassword not the same");
             }
             else
             {
+
                 User newUser = new User(P_name, P_lastName, P_email, P_ID, P_userName, P_password);
                 AddUser(newUser);
+                Lecturer lecturer = new Lecturer(P_name, P_lastName, lecturers.Count);
+                lecturers.Add(lecturer);
+
+                
+               
+                if (comboBox1.SelectedIndex == 1)
+                {
+                    newUser.isDepartmentHead = true;
+                }
             }
         }
         private void AddUser(User newUser)
@@ -157,9 +172,14 @@ namespace University
             P_passwordAuthentication = inputPasswordAuthentication.Text;
         }
 
-     /*   private void inputCodeLecturer_TextChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            P_codeLecturer = inputCodeLecturer.Text;
-        }*/
+           
+        }
+
+        /*   private void inputCodeLecturer_TextChanged(object sender, EventArgs e)
+           {
+               P_codeLecturer = inputCodeLecturer.Text;
+           }*/
     }
 }

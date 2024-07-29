@@ -8,6 +8,8 @@ namespace University
 {
     public class Student
     {
+        public String lestName { get; set; }
+        public String firstName { get; set; }
         public int numStudent { get; private set; }
         public String Route { get; private set; }
         public string specialization { get; private set; }
@@ -17,11 +19,12 @@ namespace University
         
 
 
-       public Student(int numStudent, String Route, string specialization, int currentNkz, int totalNkz, bool isTeach) 
+       public Student(string lestName, String firstName, int numStudent) 
         {
+            this.firstName = firstName;
+            this.lestName = lestName;
             this.numStudent = numStudent;
-            this.Route = Route;
-            this.specialization = specialization;
+           /* this.Route = Route;
             this.currentNkz = currentNkz;
             this.totalNkz = totalNkz;
             if (isTeach)
@@ -31,7 +34,7 @@ namespace University
             }else
             {
                 this.isTeach = false;
-            }
+            }*/
         }
 
 

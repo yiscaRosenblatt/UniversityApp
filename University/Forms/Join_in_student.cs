@@ -35,14 +35,18 @@ namespace University
             bool isExists = false;
             for (int i = 0; i < Sign_up_lecturer.users.Count; i++)
             {
-                if (Sign_up_lecturer.users[i].GetUserName().Equals(UsurName) && Sign_up_lecturer.users[i].GetPassword().Equals(Password)){
-                    HomePage homePage = new HomePage();
-                    homePage.Show();
-                    this.Hide();
-                    isExists = true;
-
-                    Sign_up_lecturer.corentUser = i; // מכניס את מי שעכשיו במערכת למשתנה
+                if (Sign_up_lecturer.users[i].isStident)
+                {
+                    if (Sign_up_lecturer.users[i].GetUserName().Equals(UsurName) && Sign_up_lecturer.users[i].GetPassword().Equals(Password))
+                    {
+                        HomePage homePage = new HomePage();
+                        homePage.Show();
+                        this.Hide();
+                        isExists = true;
+                        Sign_up_lecturer.corentUser = i; // מכניס את מי שעכשיו במערכת למשתנה
+                    }
                 }
+               
             }
             if (!isExists)
             {

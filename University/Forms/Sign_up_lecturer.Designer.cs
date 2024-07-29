@@ -47,7 +47,7 @@
             buttonBack = new Button();
             buttonSignUp = new Button();
             codeLecturer = new Label();
-            inputCodeLecturer = new TextBox();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // inputLastName
@@ -233,16 +233,19 @@
             codeLecturer.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             codeLecturer.Location = new Point(400, 344);
             codeLecturer.Name = "codeLecturer";
-            codeLecturer.Size = new Size(210, 20);
+            codeLecturer.Size = new Size(205, 20);
             codeLecturer.TabIndex = 18;
-            codeLecturer.Text = "Code for lecturers   (4 digits)";
+            codeLecturer.Text = "you are a department head?";
             // 
-            // inputCodeLecturer
+            // comboBox1
             // 
-            inputCodeLecturer.Location = new Point(631, 341);
-            inputCodeLecturer.Name = "inputCodeLecturer";
-            inputCodeLecturer.Size = new Size(140, 27);
-            inputCodeLecturer.TabIndex = 19;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "no", "yes" });
+            comboBox1.Location = new Point(620, 341);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 19;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // Sign_up_lecturer
             // 
@@ -250,7 +253,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(900, 469);
-            Controls.Add(inputCodeLecturer);
+            Controls.Add(comboBox1);
             Controls.Add(codeLecturer);
             Controls.Add(buttonSignUp);
             Controls.Add(buttonBack);
@@ -286,7 +289,6 @@
         private TextBox inputPasswordAuthentication;
         private TextBox inputID;
         private TextBox inputEmail;
-        private TextBox inputCodeLecturer;
         private Label titleSignUp;
         private Label firstName;
         private Label lastName;
@@ -299,5 +301,6 @@
         private Label codeLecturer;
         private Button buttonBack;
         private Button buttonSignUp;
+        private ComboBox comboBox1;
     }
 }

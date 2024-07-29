@@ -148,7 +148,6 @@ namespace University
             sendMessage sendMessage = new sendMessage(userName, U);
             sendMessage.Show();
 
-
         }
 
         private void people_listView_SelectedIndexChanged(object sender, EventArgs e)
