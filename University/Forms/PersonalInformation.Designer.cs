@@ -44,7 +44,6 @@ namespace University
             button3 = new Button();
             button_Course = new Button();
             button_Student = new Button();
-            button_Roures = new Button();
             button_lectueer = new Button();
             listView1 = new ListView();
             listView2 = new ListView();
@@ -77,7 +76,7 @@ namespace University
             label2.AutoSize = true;
             label2.Location = new Point(639, 109);
             label2.Name = "label2";
-            label2.Size = new Size(90, 20);
+            label2.Size = new Size(94, 20);
             label2.TabIndex = 6;
             label2.Text = "lest Message";
             label2.Click += label2_Click;
@@ -87,7 +86,7 @@ namespace University
             label3.AutoSize = true;
             label3.Location = new Point(623, 264);
             label3.Name = "label3";
-            label3.Size = new Size(105, 21);
+            label3.Size = new Size(101, 20);
             label3.TabIndex = 7;
             label3.Text = "star messages";
             // 
@@ -187,18 +186,9 @@ namespace University
             button_Student.UseVisualStyleBackColor = true;
             button_Student.Click += button_Student_Click;
             // 
-            // button_Roures
-            // 
-            button_Roures.Location = new Point(442, 259);
-            button_Roures.Name = "button_Roures";
-            button_Roures.Size = new Size(94, 29);
-            button_Roures.TabIndex = 20;
-            button_Roures.Text = "Roures";
-            button_Roures.UseVisualStyleBackColor = true;
-            // 
             // button_lectueer
             // 
-            button_lectueer.Location = new Point(442, 317);
+            button_lectueer.Location = new Point(442, 264);
             button_lectueer.Name = "button_lectueer";
             button_lectueer.Size = new Size(94, 29);
             button_lectueer.TabIndex = 21;
@@ -231,7 +221,6 @@ namespace University
             Controls.Add(listView2);
             Controls.Add(listView1);
             Controls.Add(button_lectueer);
-            Controls.Add(button_Roures);
             Controls.Add(button_Student);
             Controls.Add(button_Course);
             Controls.Add(button3);
@@ -272,7 +261,6 @@ namespace University
         private Button button3;
         private Button button_Course;
         private Button button_Student;
-        private Button button_Roures;
         private Button button_lectueer;
         private ListView listView1;
         private ListView listView2;

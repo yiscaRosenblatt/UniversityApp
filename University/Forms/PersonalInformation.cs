@@ -327,7 +327,6 @@ namespace University
 
             button_Course.Visible = false;
             button_lectueer.Visible = false;
-            button_Roures.Visible = false;
             button_Student.Visible = false;
 
 
@@ -343,7 +342,6 @@ namespace University
             {
                 button_Course.Visible = true;
                 button_lectueer.Visible = true;
-                button_Roures.Visible = true;
                 button_Student.Visible = true;
 
 
