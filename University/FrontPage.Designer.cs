@@ -39,12 +39,13 @@ namespace University
         {
             button1 = new Button();
             LecturerButton = new Button();
-            label1 = new Label();
+            titleWelcome = new Label();
             label2 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button1.Location = new Point(488, 236);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
@@ -56,6 +57,7 @@ namespace University
             // 
             // LecturerButton
             // 
+            LecturerButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             LecturerButton.ForeColor = SystemColors.ActiveCaptionText;
             LecturerButton.Location = new Point(85, 236);
             LecturerButton.Margin = new Padding(3, 4, 3, 4);
@@ -66,25 +68,27 @@ namespace University
             LecturerButton.UseVisualStyleBackColor = true;
             LecturerButton.Click += LecturerButton_Click;
             // 
-            // label1
+            // titleWelcome
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Azure;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.ForeColor = SystemColors.ControlDark;
-            label1.Location = new Point(180, 66);
-            label1.Name = "label1";
-            label1.Size = new Size(246, 22);
-            label1.TabIndex = 2;
-            label1.Text = "Welcome to the university's website";
+            titleWelcome.AutoSize = true;
+            titleWelcome.BackColor = Color.Azure;
+            titleWelcome.BorderStyle = BorderStyle.FixedSingle;
+            titleWelcome.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            titleWelcome.ForeColor = SystemColors.ControlDark;
+            titleWelcome.Location = new Point(59, 84);
+            titleWelcome.Name = "titleWelcome";
+            titleWelcome.Size = new Size(704, 45);
+            titleWelcome.TabIndex = 2;
+            titleWelcome.Text = "Welcome to the university's website";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.GradientInactiveCaption;
-            label2.Location = new Point(352, 129);
+            label2.Font = new Font("Showcard Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(326, 145);
             label2.Name = "label2";
-            label2.Size = new Size(114, 20);
+            label2.Size = new Size(162, 23);
             label2.TabIndex = 3;
             label2.Text = "Who are you???";
             // 
@@ -95,7 +99,7 @@ namespace University
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 562);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(titleWelcome);
             Controls.Add(LecturerButton);
             Controls.Add(button1);
             Margin = new Padding(3, 4, 3, 4);
@@ -109,7 +113,7 @@ namespace University
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button LecturerButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleWelcome;
         private System.Windows.Forms.Label label2;
     }
 }

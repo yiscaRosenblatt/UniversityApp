@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace University
 {
@@ -53,35 +44,83 @@ namespace University
 
         }
 
-        private void Messages_Load(object sender, EventArgs e)
-        {
-            // הוספת הודעה עם תאריך ושעה נוכחיים
-            AddItemWithDate("הודעה לדוגמה");
-        }
-
-        private void AddItemWithDate(string message)
-        {
-            string dateTimeMessage = $"{message} - {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
-            theMessages.Items.Add(dateTimeMessage);
-        }
-        private void theMessages_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (theMessages.SelectedItem != null)
-            {
-                string selectedItem = theMessages.SelectedItem.ToString();
-                string datePart = selectedItem.Substring(selectedItem.LastIndexOf('-') + 2);
-                if (DateTime.TryParseExact(datePart, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateTime))
+        /*        private void Messages_Load(object sender, EventArgs e)
                 {
-                    monthCalendar.SetDate(dateTime);
-                }
-            }
-        }
+                    // הוספת הודעה עם תאריך ושעה נוכחיים
+                    AddItemWithDate("הודעה לדוגמה");
+                }*/
+
+        /*     private void AddItemWithDate(string message)
+             {
+                 string dateTimeMessage = $"{message} - {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
+                 theMessages.Items.Add(dateTimeMessage);
+             }
+             private void theMessages_SelectedIndexChanged(object sender, EventArgs e)
+             {
+                 if (theMessages.SelectedItem != null)
+                 {
+                     string selectedItem = theMessages.SelectedItem.ToString();
+                     string datePart = selectedItem.Substring(selectedItem.LastIndexOf('-') + 2);
+                     if (DateTime.TryParseExact(datePart, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateTime))
+                     {
+                         monthCalendar.SetDate(dateTime);
+                     }
+                 }
+             }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
             HomePage homePage = new HomePage();
             homePage.Show();
             this.Hide();
+        }
+
+        private void buttonFavorite_Click(object sender, EventArgs e)
+        {
+        }
+        private void clicked_buttonFavorite_Item(object sender, EventArgs e) // ללחוץ פעמיים על כפתור מסויים
+        {
+
+        }
+
+        private void inputSendMassege_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleMessages_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_MouseDoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Messages_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count; i++)
+            {
+                listBoxMessages.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[i]);
+
+            }
+        }
+
+        private void buttonTheSender_Click(object sender, EventArgs e)
+        {
+            Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Sort();
+            listBoxMessages.Items.Clear();
+
+            for (int i = 0; i < Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count; i++)
+            {
+                listBoxMessages.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[i]);
+            }
+        }
+
+        private void listBoxMessages_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("favorite");
         }
     }
 }

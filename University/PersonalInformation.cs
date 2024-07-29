@@ -88,29 +88,29 @@ namespace University
 
         private void label7_Click(object sender, EventArgs e)
         {
-           
-             
-           
+
+
+
         }
 
         private void ButtonUpdateAge_Click(object sender, EventArgs e)
         {
-           
-                if (int.TryParse(textBoxAge.Text, out int newAge) && newAge > 0)
-                {
 
-                    Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age = newAge;
-                    textBoxAge.Visible = false;
-                    buttonUpdateAge.Visible = false;
-                    label7.Text = "Age: " + newAge;
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a valid age.", "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
-         
-           
+            if (int.TryParse(textBoxAge.Text, out int newAge) && newAge > 0)
+            {
+
+                Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age = newAge;
+                textBoxAge.Visible = false;
+                buttonUpdateAge.Visible = false;
+                label7.Text = "Age: " + newAge;
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid age.", "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -121,12 +121,12 @@ namespace University
                     textBoxPhone.Visible = true;
                     buttonUpdatePhone.Visible = true;
                 }*/
-               /* else
-                {
-                    label8.Text = "Phone: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon;
-                }*/
-            
-          
+            /* else
+             {
+                 label8.Text = "Phone: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].phon;
+             }*/
+
+
         }
         private void ButtonUpdatePhone_Click(object sender, EventArgs e)
         {
@@ -136,39 +136,39 @@ namespace University
             textBoxPhone.Visible = false;
             buttonUpdatePhone.Visible = false;
             label8.Text = "Phone: " + newPhone;
-                
-           
-           
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         Image newImage;
         private void button1_Click(object sender, EventArgs e)
         {
-             
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-                openFileDialog.Title = "Select a Profile Picture";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|.jpg;.jpeg;.png;.bmp";
+            openFileDialog.Title = "Select a Profile Picture";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
                 {
-                    try
-                    {
-                        newImage = Image.FromFile(openFileDialog.FileName);
-                        pictureBox1.Image = newImage;
-                        Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image = newImage;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Failed to load image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    newImage = Image.FromFile(openFileDialog.FileName);
+                    pictureBox1.Image = newImage;
+                    Sign_up_lecturer.users[Sign_up_lecturer.corentUser].image = newImage;
                 }
-            
-            
-                
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to load image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
 
         }
 
@@ -198,19 +198,19 @@ namespace University
 
         private void PersonalInformation_Load(object sender, EventArgs e)
         {
-           
+
             if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count > 0)
             {
-                 listBox1.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1]);
+                listBox1.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count - 1]);
             }
             else
             {
                 listBox1.Items.Add("No messages available.");
             }
             label4.Text = "Name: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].FirstName + " " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].LastName;
-            
+
             label5.Text = "Email: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].Email;
-           
+
             label6.Text = "ID: " + Sign_up_lecturer.users[Sign_up_lecturer.corentUser].ID;
 
             if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].age == 0)

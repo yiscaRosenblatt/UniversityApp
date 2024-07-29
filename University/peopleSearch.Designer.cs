@@ -37,18 +37,19 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(136, 69);
+            textBox1.Location = new Point(136, 71);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(461, 27);
+            textBox1.Size = new Size(470, 27);
             textBox1.TabIndex = 0;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(337, 32);
+            label1.Font = new Font("Showcard Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(270, 18);
             label1.Name = "label1";
-            label1.Size = new Size(102, 20);
+            label1.Size = new Size(231, 35);
             label1.TabIndex = 1;
             label1.Text = "people search";
             label1.Click += label1_Click;
@@ -65,11 +66,11 @@
             // button2
             // 
             button2.ForeColor = Color.Red;
-            button2.Location = new Point(12, 24);
+            button2.Location = new Point(12, 409);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 16;
-            button2.Text = "baek";
+            button2.Text = "back";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -87,6 +88,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 450);
             Controls.Add(people_listView);
             Controls.Add(button2);

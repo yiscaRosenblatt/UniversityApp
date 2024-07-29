@@ -51,7 +51,7 @@ namespace University
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.na_na;
-            pictureBox1.Location = new Point(30, 81);
+            pictureBox1.Location = new Point(12, 135);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(161, 199);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -61,7 +61,7 @@ namespace University
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(548, 26);
+            dateTimePicker1.Location = new Point(546, 89);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 4;
@@ -70,18 +70,20 @@ namespace University
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(347, 71);
+            label1.Font = new Font("Showcard Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(240, 30);
             label1.Name = "label1";
-            label1.Size = new Size(146, 20);
+            label1.Size = new Size(377, 37);
             label1.TabIndex = 5;
             label1.Text = "Personal Information";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(623, 119);
+            label2.Font = new Font("Bernard MT Condensed", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(650, 152);
             label2.Name = "label2";
-            label2.Size = new Size(94, 20);
+            label2.Size = new Size(90, 20);
             label2.TabIndex = 6;
             label2.Text = "lest Message";
             label2.Click += label2_Click;
@@ -89,16 +91,17 @@ namespace University
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(607, 274);
+            label3.Font = new Font("Bernard MT Condensed", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(641, 298);
             label3.Name = "label3";
-            label3.Size = new Size(101, 20);
+            label3.Size = new Size(105, 21);
             label3.TabIndex = 7;
             label3.Text = "star messages";
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(574, 155);
+            listBox1.Location = new Point(604, 176);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(175, 104);
             listBox1.TabIndex = 8;
@@ -106,7 +109,7 @@ namespace University
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(574, 306);
+            listBox2.Location = new Point(604, 322);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(180, 104);
             listBox2.TabIndex = 9;
@@ -158,7 +161,7 @@ namespace University
             // 
             // button1
             // 
-            button1.Location = new Point(58, 286);
+            button1.Location = new Point(44, 322);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 15;
@@ -169,9 +172,9 @@ namespace University
             // button2
             // 
             button2.ForeColor = Color.Red;
-            button2.Location = new Point(12, 24);
+            button2.Location = new Point(12, 12);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(94, 41);
             button2.TabIndex = 16;
             button2.Text = "Log out";
             button2.UseVisualStyleBackColor = true;
@@ -183,7 +186,7 @@ namespace University
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 17;
-            button3.Text = "beak";
+            button3.Text = "back";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -191,6 +194,7 @@ namespace University
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(821, 450);
             Controls.Add(button3);
             Controls.Add(button2);
