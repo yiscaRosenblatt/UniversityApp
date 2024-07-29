@@ -287,7 +287,9 @@ namespace University
 
         private void button_lectueer_Click(object sender, EventArgs e)
         {
-
+            ShowLecturers ShowLecturers = new ShowLecturers();
+            ShowLecturers.Show();
+            
         }
 
         private void PersonalInformation_Load_1(object sender, EventArgs e)
@@ -346,8 +348,17 @@ namespace University
 
 
             }
+            if (!Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isStident)
+            {
+                button_Course.Visible = true;
+                button_Student.Visible = true;
+            }
 
+            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isStident)
+            {
+                button_Course.Visible = true;
 
+            }
 
         }
 
@@ -356,9 +367,16 @@ namespace University
             Courses Courses = new Courses();
             Courses.Show();
 
-           
-           
-           
+
+
+
+        }
+
+        private void button_Student_Click(object sender, EventArgs e)
+        {
+            show_student show_student = new show_student();
+            show_student.Show();
+
         }
     }
 }

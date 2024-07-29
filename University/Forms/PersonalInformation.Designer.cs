@@ -184,6 +184,7 @@ namespace University
             button_Student.TabIndex = 19;
             button_Student.Text = "Student";
             button_Student.UseVisualStyleBackColor = true;
+            button_Student.Click += button_Student_Click;
             // 
             // button_Roures
             // 

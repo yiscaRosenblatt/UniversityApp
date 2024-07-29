@@ -79,7 +79,7 @@
             button_EditCourses.TabIndex = 6;
             button_EditCourses.Text = "Edit courses";
             button_EditCourses.UseVisualStyleBackColor = true;
-            button_EditCourses.Click += button_EditCourses_Click;
+           /* button_EditCourses.Click += button_EditCourses_Click;*/
             // 
             // button_delete
             // 
@@ -104,6 +104,7 @@
             Controls.Add(label1);
             Name = "EditCourses";
             Text = "EditCourses";
+            Load += EditCourses_Load;
             ResumeLayout(false);
             PerformLayout();
         }

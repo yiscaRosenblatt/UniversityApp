@@ -97,20 +97,11 @@ namespace University
 
                 User newUser = new User(P_name, P_lastName, P_email, P_ID, P_userName, P_password);
                 AddUser(newUser);
-                if (lecturers.Count == 0)
-                {
-                    Lecturer lecturer = new Lecturer(0);
-                    lecturers.Add(lecturer);
+                Lecturer lecturer = new Lecturer(P_name, P_lastName, lecturers.Count);
+                lecturers.Add(lecturer);
 
-                }
-                else
-                {
-                    for (int i = 1; i < Sign_up_lecturer.users.Count; i++)
-                    {
-                        Lecturer lecturer = new Lecturer(lecturers[i - 1].numEmployee + 1);
-                        lecturers.Add(lecturer);
-                    }
-                }
+                
+               
                 if (comboBox1.SelectedIndex == 1)
                 {
                     newUser.isDepartmentHead = true;

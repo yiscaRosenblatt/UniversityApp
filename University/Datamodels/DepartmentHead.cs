@@ -14,8 +14,8 @@ namespace University
             public List<Lecturer> teach { get; set; }
             public List<Student> students { get; set; }
 
-            public DepartmentHead(List<Routes> chargeRoutes, List<Lecturer> teach, List<Student> students, int numEmployee)
-                : base(numEmployee) 
+            public DepartmentHead(List<Routes> chargeRoutes, List<Lecturer> teach, List<Student> students, int numEmployee, string firstName,string listName)
+                : base(firstName, listName, numEmployee) 
             {
                 this.chargeRoutes = chargeRoutes;
                 this.teach = teach;

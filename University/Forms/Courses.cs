@@ -29,15 +29,10 @@ namespace University.Forms
             if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isDepartmentHead)
             {
                 button_Add.Visible = true;
-
-
-
-
             }
 
             listView1.View = View.Details;
-            listView1.Columns.Add("name", -2, HorizontalAlignment.Left);
-
+            listView1.Columns.Add("name");
 
             displayALLCourses();
 
@@ -45,22 +40,17 @@ namespace University.Forms
 
         private void displayALLCourses()
         {
-            for (int i = 0; i < listView1.Columns.Count; i++)
+            listView1.Items.Clear();
+            for (int i = 0; i < Courses.ListCourse.Count; i++)
             {
                 if (ListCourse.Count > 0)
                 {
-                    listView1.Items.Clear();
+                   
                     string nameCorse = ListCourse[i].Name;
-
-                    string[] row = { nameCorse };
+                    string[] row = {nameCorse};
                     ListViewItem item = new ListViewItem(row);
                     listView1.Items.Add(item);
-
-
-                    foreach (ColumnHeader column in this.listView1.Columns)
-                    {
-                        column.Width = -2;
-                    }
+                   
 
                 }
             }
@@ -70,13 +60,12 @@ namespace University.Forms
         private void clicked_listView1_item(object sender, EventArgs e)
         {
 
-            if (Courses.ListCourse != null)
-            {
+           
                 ListViewItem clickedlistView1 = listView1.SelectedItems[0];
                 string nameCourse = clickedlistView1.SubItems[0].Text;
                 EditCourses EditCourses = new EditCourses(nameCourse);
                 EditCourses.Show();
-            }
+            
 
             /*  ListViewItem clickedUser = people_listView.SelectedItems[0];
               string userEmail = clickedUser.SubItems[2].Text;

@@ -23,19 +23,22 @@ namespace University.Forms
         {
             if (textBox_nameCourse != null)
             {
-               
-                List<Student> students = new List<Student>();
-               
-                Course course = new Course(textBox_nameCourse.Text, students);
-                Courses.ListCourse.Add(course);
-                MessageBox.Show("Add Successfully");
-                Courses paeg_Courses = new Courses();
-                paeg_Courses.Show();
-                this.Close();
-            }
-          
+                if (isCourseExists() == -1)
+                {
+                    List<Student> students = new List<Student>();
 
-            
+                    Course course = new Course(textBox_nameCourse.Text, students);
+                    Courses.ListCourse.Add(course);
+                    MessageBox.Show("Add Successfully");
+                    Courses paeg_Courses = new Courses();
+                    paeg_Courses.Show();
+                    this.Close();
+                }
+               
+            }
+
+
+
             else
             {
                 MessageBox.Show("The name or student is empty");
@@ -43,13 +46,15 @@ namespace University.Forms
 
         }
 
-       
+
 
         public int isCourseExists()
         {
+            string courseName = textBox_nameCourse.Text.Trim();
+
             for (int i = 0; i < Courses.ListCourse.Count; i++)
             {
-                if (textBox_nameCourse.Equals(Courses.ListCourse[i].Name))
+                if (courseName.Equals(Courses.ListCourse[i].Name))
                 {
                     return i;
                 }
@@ -64,7 +69,6 @@ namespace University.Forms
                 if (isCourseExists() != -1)
                 {
                     Courses.ListCourse.RemoveAt(isCourseExists());
-
                     MessageBox.Show("Course deleted successfully.");
                     Courses paeg_Courses = new Courses();
                     paeg_Courses.Show();
@@ -77,9 +81,9 @@ namespace University.Forms
             }
         }
 
-        private void button_EditCourses_Click(object sender, EventArgs e)
+       /* private void button_EditCourses_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i <= Courses.ListCourse.Count;i++)
+            for (int i = 0; i <= Courses.ListCourse.Count; i++)
             {
                 if (Courses.ListCourse[i].Equals(Name))
                 {
@@ -89,8 +93,24 @@ namespace University.Forms
                     paeg_Courses.Show();
                     this.Close();
                 }
-               
+
             }
+        }*/
+
+        private void EditCourses_Load(object sender, EventArgs e)
+        {
+            button_AddNewCourses.Visible = false;
+            button_delete.Visible = false;
+            button_EditCourses.Visible = false;
+
+            if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isDepartmentHead == true)
+            {
+                button_AddNewCourses.Visible = true;
+                button_delete.Visible = true;
+                button_EditCourses.Visible = true;
+
+            }
+
         }
     }
 }

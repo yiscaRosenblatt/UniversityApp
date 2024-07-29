@@ -8,6 +8,8 @@ namespace University
 {
     public class Lecturer
     {
+        public string firstName {  get; set; }
+        public string lastName {  get; set; }
         public int numEmployee { get; private set; }
 
         public List<string> techCourse = new List<string>();
@@ -16,9 +18,10 @@ namespace University
         public int numStar { get; private set; }
 
 
-        public Lecturer(int numEmployee) 
+        public Lecturer(string firstName, string lastName, int numEmployee) 
         {
-
+            this.firstName = firstName;
+            this.lastName = lastName;
             this.numEmployee = numEmployee;
         }
     }
