@@ -25,8 +25,7 @@ namespace University
         private string ID;
         private string userName;
         private string chekPassword;
-        public static List<User> userStudemt = new List<User>();
-        public static int corentUserStudent { get; set; }
+       
 
 
 
@@ -128,7 +127,9 @@ namespace University
             else
             {
                 User newUser = new User(name, lestName, email, ID, userName, password);
+                newUser.isStident = true;
                 AddUser(newUser);
+                
             }
 
 
@@ -138,19 +139,19 @@ namespace University
         private void AddUser(User newUser)
         {
             bool isTaking = false;
-            for (int i = 0; i < userStudemt.Count; i++)
+            for (int i = 0; i < Sign_up_lecturer.users.Count; i++)
             {
-                if (userStudemt[i].GetID().Equals(newUser.GetID()))
+                if (Sign_up_lecturer.users[i].GetID().Equals(newUser.GetID()))
                 {
                     MessageBox.Show("this ID in the system");
                     isTaking = true;
                 }
-                else if (userStudemt[i].GetUserName().Equals(newUser.GetUserName()))
+                else if (Sign_up_lecturer.users[i].GetUserName().Equals(newUser.GetUserName()))
                 {
                     MessageBox.Show("this User Name is taking");
                     isTaking = true;
                 }
-                else if (userStudemt[i].GetPassword().Equals(newUser.GetPassword()))
+                else if (Sign_up_lecturer.users[i].GetPassword().Equals(newUser.GetPassword()))
                 {
                     MessageBox.Show("this Password is taking");
                     isTaking = true;
@@ -158,9 +159,11 @@ namespace University
             }
             if (!isTaking)
             {
-                userStudemt.Add(newUser);
+                Sign_up_lecturer.users.Add(newUser);
                 MessageBox.Show("you sign up sucssfly");
             }
+
+            
 
         }
 

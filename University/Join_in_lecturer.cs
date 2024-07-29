@@ -49,6 +49,7 @@ namespace University
                     homePage.Show();
                     this.Hide();
                     isExists = true;
+                    Sign_up_lecturer.corentUser = i;
                 }
             }
             if (!isExists)
@@ -58,8 +59,8 @@ namespace University
         }
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            frontFage frontFage = new frontFage();
-            frontFage.Show();
+            FrontPage frontPage = new FrontPage();
+            frontPage.Show();
             this.Hide();
         }
 
@@ -76,8 +77,8 @@ namespace University
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frontFage frontFage = new frontFage();
-            frontFage.Show();
+            FrontPage frontPage = new FrontPage();
+            frontPage.Show(this);
             this.Hide();
         }
     }

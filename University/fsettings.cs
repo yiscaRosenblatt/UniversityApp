@@ -7,18 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace University
 {
-    public partial class HomePage : Form
+    public partial class fsettings : Form
     {
 
         System.Drawing.Color text;
         System.Drawing.Color back;
         System.Drawing.Color button = System.Drawing.Color.LightGray;
 
-        public HomePage()
+
+        public fsettings()
         {
             if (Settings.DarkMode)
             {
@@ -33,35 +33,26 @@ namespace University
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PersonalInformation PersonalInformation = new PersonalInformation();
-            PersonalInformation.Show();
+            Settings.DarkMode = !Settings.DarkMode;
+            if(button1.Text == "Light")
+            {
+                button1.Text = "Dark";
+            }
+            else
+            {
+                button1.Text = "Light";
+            }
+
+            fsettings fs = new fsettings();
+            fs.Show();
             this.Hide();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            peopleSearch peopleSearch = new peopleSearch();
-            peopleSearch.Show();
-            this.Hide();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

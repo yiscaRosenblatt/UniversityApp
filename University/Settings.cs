@@ -8,7 +8,7 @@ namespace University
 {
     internal class Settings
     {
-        public static bool DarkMode = true;
+        public static bool DarkMode = false;
 
     }
 }
