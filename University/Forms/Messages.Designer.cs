@@ -36,14 +36,14 @@
             monthCalendar = new MonthCalendar();
             button1 = new Button();
             label1 = new Label();
-            listBoxMessages = new ListBox();
+            listViewMessgest = new ListView();
             SuspendLayout();
             // 
             // titleMessages
             // 
             titleMessages.AutoSize = true;
             titleMessages.Font = new Font("Snap ITC", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            titleMessages.Location = new Point(196, 35);
+            titleMessages.Location = new Point(224, 36);
             titleMessages.Name = "titleMessages";
             titleMessages.Size = new Size(181, 39);
             titleMessages.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             buttonDate.BackColor = Color.LemonChiffon;
             buttonDate.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold);
-            buttonDate.Location = new Point(360, 102);
+            buttonDate.Location = new Point(388, 103);
             buttonDate.Name = "buttonDate";
             buttonDate.Size = new Size(123, 39);
             buttonDate.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             buttonFavorite.BackColor = Color.LemonChiffon;
             buttonFavorite.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold);
-            buttonFavorite.Location = new Point(102, 102);
+            buttonFavorite.Location = new Point(130, 103);
             buttonFavorite.Name = "buttonFavorite";
             buttonFavorite.Size = new Size(123, 39);
             buttonFavorite.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             buttonTheSender.BackColor = Color.LemonChiffon;
             buttonTheSender.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold);
-            buttonTheSender.Location = new Point(231, 102);
+            buttonTheSender.Location = new Point(259, 103);
             buttonTheSender.Name = "buttonTheSender";
             buttonTheSender.Size = new Size(123, 39);
             buttonTheSender.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Copperplate Gothic Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(18, 114);
+            label2.Location = new Point(46, 115);
             label2.Name = "label2";
             label2.Size = new Size(75, 16);
             label2.TabIndex = 4;
@@ -98,7 +98,7 @@
             // monthCalendar
             // 
             monthCalendar.BackColor = SystemColors.Info;
-            monthCalendar.Location = new Point(506, 22);
+            monthCalendar.Location = new Point(596, 18);
             monthCalendar.Name = "monthCalendar";
             monthCalendar.TabIndex = 16;
             monthCalendar.DateChanged += monthCalendar1_DateChanged;
@@ -121,14 +121,14 @@
             label1.Size = new Size(0, 20);
             label1.TabIndex = 21;
             // 
-            // listBoxMessages
+            // listViewMessgest
             // 
-            listBoxMessages.BorderStyle = BorderStyle.FixedSingle;
-            listBoxMessages.FormattingEnabled = true;
-            listBoxMessages.Location = new Point(131, 161);
-            listBoxMessages.Name = "listBoxMessages";
-            listBoxMessages.Size = new Size(336, 162);
-            listBoxMessages.TabIndex = 22;
+            listViewMessgest.Location = new Point(12, 167);
+            listViewMessgest.Name = "listViewMessgest";
+            listViewMessgest.Size = new Size(572, 263);
+            listViewMessgest.TabIndex = 23;
+            listViewMessgest.UseCompatibleStateImageBehavior = false;
+            listViewMessgest.Click += buttonFavorite_Click;
             // 
             // Messages
             // 
@@ -136,8 +136,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(800, 522);
-            Controls.Add(listBoxMessages);
+            ClientSize = new Size(879, 528);
+            Controls.Add(listViewMessgest);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(monthCalendar);
@@ -165,6 +165,6 @@
         private MonthCalendar monthCalendar;
         private Button button1;
         private Label label1;
-        private ListBox listBoxMessages;
+        private ListView listViewMessgest;
     }
 }

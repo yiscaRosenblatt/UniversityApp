@@ -33,9 +33,8 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            textBox1 = new TextBox();
             titleHomePage = new Label();
-            label1 = new Label();
+            logOutButtun = new Button();
             SuspendLayout();
             // 
             // button1
@@ -86,13 +85,6 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(94, 116);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(461, 27);
-            textBox1.TabIndex = 4;
-            // 
             // titleHomePage
             // 
             titleHomePage.AutoSize = true;
@@ -103,14 +95,18 @@
             titleHomePage.TabIndex = 5;
             titleHomePage.Text = "homepage";
             // 
-            // label1
+            // logOutButtun
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(494, 119);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 20);
-            label1.TabIndex = 6;
-            label1.Text = "search";
+            logOutButtun.BackColor = Color.Transparent;
+            logOutButtun.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            logOutButtun.ForeColor = Color.Red;
+            logOutButtun.Location = new Point(24, 378);
+            logOutButtun.Name = "logOutButtun";
+            logOutButtun.Size = new Size(115, 35);
+            logOutButtun.TabIndex = 6;
+            logOutButtun.Text = "log out";
+            logOutButtun.UseVisualStyleBackColor = false;
+            logOutButtun.Click += logOutButtun_Click;
             // 
             // HomePage
             // 
@@ -118,9 +114,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Beige;
             ClientSize = new Size(676, 434);
-            Controls.Add(label1);
+            Controls.Add(logOutButtun);
             Controls.Add(titleHomePage);
-            Controls.Add(textBox1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -137,8 +132,7 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private TextBox textBox1;
         private Label titleHomePage;
-        private Label label1;
+        private Button logOutButtun;
     }
 }

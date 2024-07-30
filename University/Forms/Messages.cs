@@ -1,9 +1,12 @@
 ﻿using System.Windows.Forms;
+using University.Datamodels;
 
 namespace University
 {
     public partial class Messages : Form
     {
+        private bool isFivorit = false;
+
         public Messages()
         {
             InitializeComponent();
@@ -75,12 +78,15 @@ namespace University
             this.Hide();
         }
 
-        private void buttonFavorite_Click(object sender, EventArgs e)
-        {
-        }
         private void clicked_buttonFavorite_Item(object sender, EventArgs e) // ללחוץ פעמיים על כפתור מסויים
         {
+            if (listViewMessgest.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listViewMessgest.SelectedItems[0];
+                string messageText = selectedItem.Text;
 
+                isFivorit = true;
+            }
         }
 
         private void inputSendMassege_TextChanged(object sender, EventArgs e)
@@ -100,27 +106,68 @@ namespace University
 
         private void Messages_Load(object sender, EventArgs e)
         {
+            listViewMessgest.View = View.Details;
+            listViewMessgest.Columns.Add("The sender", -2, HorizontalAlignment.Left);
+            listViewMessgest.Columns.Add("Text", -2);
+            listViewMessgest.Columns.Add("Date", -2);
+            displayAllMessages();
+        }
+
+        /*private void buttonTheSender_Click(object sender, EventArgs e)
+        {
+            Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Sort();
+            listViewMessgest.Items.Clear();
+
             for (int i = 0; i < Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count; i++)
             {
-                listBoxMessages.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[i]);
+                listViewMessgest.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[i]);
+            }
+        }*/
+        private void displayAllMessages()
+        {
+            listViewMessgest.Items.Clear();
 
+            foreach (Messages_setting messagest in Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges)
+            {
+                String theSender = messagest.SendedName;
+                String theText = messagest.text;
+                String date = messagest.Date.ToString("yyyy-MM-dd HH:mm:ss");
+
+                String[] row = { theSender, theText, date };
+                ListViewItem item = new ListViewItem(row);
+                listViewMessgest.Items.Add(item);
             }
         }
 
         private void buttonTheSender_Click(object sender, EventArgs e)
         {
-            Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Sort();
-            listBoxMessages.Items.Clear();
+            Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Sort((x, y) => string.Compare(x.text, y.text));
 
+            // ניקוי ה-ListView
+            listViewMessgest.Items.Clear();
+
+            // הוספת ההודעות הממויינות ל-ListView
             for (int i = 0; i < Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count; i++)
             {
-                listBoxMessages.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[i]);
+                listViewMessgest.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[i].text);
+            }
+        }
+        private void buttonFavorite_Click(object sender, EventArgs e)
+        {
+            listViewMessgest.Items.Clear();
+
+            if (isFivorit==true)
+            {
+                for (int i = 0; i < Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges.Count; i++)
+                {
+                    listViewMessgest.Items.Add(Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges[i].text);
+                }
             }
         }
 
-        private void listBoxMessages_DoubleClick(object sender, EventArgs e)
+       /* private void listViewMessgest_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("favorite");
-        }
+
+        }*/
     }
 }

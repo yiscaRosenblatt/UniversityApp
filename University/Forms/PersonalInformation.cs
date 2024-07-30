@@ -289,7 +289,7 @@ namespace University
         {
             ShowLecturers ShowLecturers = new ShowLecturers();
             ShowLecturers.Show();
-            
+
         }
 
         private void PersonalInformation_Load_1(object sender, EventArgs e)
@@ -374,6 +374,11 @@ namespace University
         {
             show_student show_student = new show_student();
             show_student.Show();
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

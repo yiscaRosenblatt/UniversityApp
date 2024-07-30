@@ -52,8 +52,7 @@ namespace University
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.na_na;
-            pictureBox1.Location = new Point(23, 128);
+            pictureBox1.Image = Properties.Resources.na_na; pictureBox1.Location = new Point(23, 128);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(161, 199);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -203,6 +202,7 @@ namespace University
             listView1.Size = new Size(246, 121);
             listView1.TabIndex = 22;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
             // listView2
             // 

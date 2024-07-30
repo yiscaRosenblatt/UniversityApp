@@ -64,6 +64,11 @@ namespace University
 
         }
 
-       
+        private void logOutButtun_Click(object sender, EventArgs e)
+        {
+            FrontPage frontpage = new FrontPage();
+            frontpage.Show();
+            this.Hide();
+        }
     }
 }
