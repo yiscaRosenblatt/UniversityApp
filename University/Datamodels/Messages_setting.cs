@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,10 @@ namespace University.Datamodels
 
         public Messages_setting(string sendedName, string text, DateTime date)
         {
-            SendedName = sendedName;
+            this.SendedName = sendedName;
             this.text = text;
             this.isFivorit = false;
-            Date = date;
+            this.Date = date;
         }
     }
 }

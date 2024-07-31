@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using University.Datamodels;
 using University.Forms;
 
 namespace University
@@ -338,6 +339,13 @@ namespace University
 
             displayMseges();
 
+            listView2.View = View.Details;
+            listView2.Columns.Add("name", -2, HorizontalAlignment.Left);
+            listView2.Columns.Add("text", -2);
+            listView2.Columns.Add("date", -2);
+            displayFivoritMseges();
+
+
             if (Sign_up_lecturer.users[Sign_up_lecturer.corentUser].isDepartmentHead)
             {
                 button_Course.Visible = true;
@@ -380,6 +388,41 @@ namespace University
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void displayFivoritMseges()
+        {
+            listView2.Items.Clear();
+
+
+
+            foreach (Messages_setting messagest in Sign_up_lecturer.users[Sign_up_lecturer.corentUser].mesges)
+            {
+                if (messagest.isFivorit == true)
+                {
+                    String theSender = messagest.SendedName;
+                    String theText = messagest.text;
+                    String date = messagest.Date.ToString("yyyy-MM-dd HH:mm:ss");
+                    String[] row = { theSender, theText, date };
+                    ListViewItem item = new ListViewItem(row);
+                    listView2.Items.Add(item);
+                }
+
+            }
+            foreach (ColumnHeader column in this.listView2.Columns)
+            {
+                column.Width = -2;
+            }
+        }
+    
+
+
+
+
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

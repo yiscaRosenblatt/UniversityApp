@@ -128,7 +128,7 @@
             listViewMessgest.Size = new Size(572, 263);
             listViewMessgest.TabIndex = 23;
             listViewMessgest.UseCompatibleStateImageBehavior = false;
-            listViewMessgest.Click += buttonFavorite_Click;
+            listViewMessgest.Click += clicked_buttonFavorite_Item;
             // 
             // Messages
             // 
